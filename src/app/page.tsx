@@ -1,13 +1,35 @@
 import Link from "next/link";
 import SearchBar from "@/components/SearchBar";
 import JsonLd from "@/components/JsonLd";
-import { generateWebsiteSchema } from "@/lib/seo";
+import { generateWebsiteSchema, generateFAQSchema } from "@/lib/seo";
 import {
   heroImage,
   styleImages,
   testimonialAvatars,
   blogImages,
 } from "@/data/images";
+
+const homeFAQs = [
+  { question: "What is boudoir photography?", answer: "Boudoir photography is a style of intimate portraiture that celebrates confidence, beauty, and self-expression. Sessions typically take place in a private studio with professional lighting, and many photographers include hair, makeup, and wardrobe guidance." },
+  { question: "How much does a boudoir photoshoot cost?", answer: "Boudoir photography sessions typically range from $300 to $2,500 or more, depending on the photographer, location, and package. Most include professional hair and makeup, 1-2 hours of shooting, and a selection of professionally edited images." },
+  { question: "How do I find a boudoir photographer near me?", answer: "Use our directory at BoudoirPhotographyClub.com to browse 667+ verified boudoir photographers across 626 cities in all 50 US states. Filter by location, view portfolios, read reviews, and request free quotes directly from photographers." },
+  { question: "What should I wear to a boudoir session?", answer: "Popular wardrobe choices include lingerie, bodysuits, oversized sweaters, a partner's dress shirt, or robes. Many photographers provide a client closet with options in various sizes and offer wardrobe consultations before your session." },
+];
+
+const directoryRatingSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Boudoir Photography Club",
+  url: "https://boudoirphotographyclub.com",
+  applicationCategory: "Photography Directory",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: 4.9,
+    bestRating: 5,
+    worstRating: 1,
+    ratingCount: 667,
+  },
+};
 
 const featuredCities = [
   { name: "Los Angeles", state: "California", stateSlug: "california", slug: "los-angeles" },
@@ -79,6 +101,8 @@ export default function HomePage() {
   return (
     <>
       <JsonLd data={generateWebsiteSchema()} />
+      <JsonLd data={generateFAQSchema(homeFAQs)} />
+      <JsonLd data={directoryRatingSchema} />
 
       {/* Hero Section */}
       <section className="relative px-8 py-20 overflow-hidden max-w-[1440px] mx-auto">

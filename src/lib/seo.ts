@@ -109,3 +109,30 @@ export function generateWebsiteSchema() {
     },
   };
 }
+
+export function generateVideoSchema(video: {
+  name: string;
+  description: string;
+  thumbnailUrl: string;
+  uploadDate: string;
+  contentUrl?: string;
+  embedUrl?: string;
+  duration?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: video.name,
+    description: video.description,
+    thumbnailUrl: video.thumbnailUrl,
+    uploadDate: video.uploadDate,
+    ...(video.contentUrl && { contentUrl: video.contentUrl }),
+    ...(video.embedUrl && { embedUrl: video.embedUrl }),
+    ...(video.duration && { duration: video.duration }),
+    publisher: {
+      "@type": "Organization",
+      name: "Boudoir Photography Club",
+      url: "https://boudoirphotographyclub.com",
+    },
+  };
+}

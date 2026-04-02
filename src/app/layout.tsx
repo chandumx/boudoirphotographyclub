@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://boudoirphotographyclub.com"),
   alternates: {
     canonical: "./",
+    languages: {
+      "en-US": "./",
+    },
   },
   title: {
     default: "Boudoir Photography Club | Find Boudoir Photographers Near You",

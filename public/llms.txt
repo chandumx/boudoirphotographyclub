@@ -1,0 +1,29 @@
+# Boudoir Photography Club
+# https://boudoirphotographyclub.com
+# A directory of professional boudoir photographers across all 50 US states
+
+## About
+Boudoir Photography Club is the premier online directory connecting clients with professional boudoir photographers. We feature 667+ verified photographers across 626 cities in all 50 US states plus Washington DC.
+
+## Key Pages
+- Homepage: https://boudoirphotographyclub.com/
+- Browse All States: https://boudoirphotographyclub.com/boudoir-photographers
+- Find Near Me: https://boudoirphotographyclub.com/boudoir-photographer-near-me
+- How It Works: https://boudoirphotographyclub.com/how-it-works
+- About: https://boudoirphotographyclub.com/about
+- Contact: https://boudoirphotographyclub.com/contact
+
+## Directory Structure
+- State pages: /boudoir-photographer/{state-slug} (51 pages)
+- City pages: /boudoir-photographer/{state-slug}/{city-slug} (626 pages)
+- Photographer profiles: /photographer/{photographer-slug} (667 pages)
+
+## Content Topics
+- Boudoir photography styles: romantic, luxury, bridal, fine art, glamour, dark & moody, editorial
+- Boudoir session planning: what to wear, what to expect, pricing guide, posing tips
+- Photographer selection: how to choose, questions to ask, portfolio review tips
+- Session types: solo boudoir, couples boudoir, bridal boudoir, maternity boudoir
+
+## Contact
+- Email: hello@boudoirphotographyclub.com
+- Website: https://boudoirphotographyclub.com
