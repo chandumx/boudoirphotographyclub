@@ -3,12 +3,16 @@ import "./globals.css";
 import PublicLayout from "@/components/PublicLayout";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://boudoirphotographyclub.com"),
+  alternates: {
+    canonical: "./",
+  },
   title: {
-    default: "Boudoir Directory | Find Boudoir Photographers Near You",
-    template: "%s | Boudoir Directory",
+    default: "Boudoir Photography Club | Find Boudoir Photographers Near You",
+    template: "%s | Boudoir Photography Club",
   },
   description:
-    "Discover talented photographers who celebrate confidence and beauty. A curated collection of artists specializing in the fine art of the female form.",
+    "Find the best boudoir photographers near you on BoudoirPhotographyClub.com. Browse portfolios, read reviews, and book your empowering boudoir photography session today.",
   keywords: [
     "boudoir photographer",
     "boudoir photography",
@@ -17,11 +21,26 @@ export const metadata: Metadata = {
     "bridal boudoir",
     "luxury boudoir photography",
     "fine art boudoir",
+    "boudoir photography club",
   ],
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Boudoir Directory",
+    siteName: "Boudoir Photography Club",
+    images: [
+      {
+        url: "/hero-boudoir.png",
+        width: 1200,
+        height: 630,
+        alt: "Boudoir Photography Club - Find Boudoir Photographers Near You",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Boudoir Photography Club | Find Boudoir Photographers Near You",
+    description: "Find the best boudoir photographers near you. Browse portfolios, read reviews, and book your session.",
+    images: ["/hero-boudoir.png"],
   },
   robots: {
     index: true,

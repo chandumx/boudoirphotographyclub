@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getPhotographerImage } from "@/data/images";
 
 interface PhotographerCardProps {
@@ -32,10 +33,13 @@ export default function PhotographerCard({
     <div className="bg-surface-container-lowest rounded-sm p-6 md:p-8 flex flex-col md:flex-row gap-6 group hover:shadow-[0_20px_40px_rgba(26,28,26,0.04)] transition-shadow">
       {/* Image / Avatar */}
       <div className="w-full md:w-40 h-48 md:h-40 rounded-sm flex-shrink-0 relative overflow-hidden">
-        <img
+        <Image
           src={imageUrl || getPhotographerImage(specialties, slug)}
           alt={`${name} - Boudoir Photographer in ${cityName}`}
-          className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+          fill
+          sizes="(max-width: 768px) 100vw, 160px"
+          loading="lazy"
+          className="object-cover grayscale-[0.2] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
         />
         {tier === "FEATURED" && (
           <span className="absolute top-2 left-2 bg-primary text-on-primary px-2 py-0.5 font-label text-[8px] uppercase tracking-widest rounded-full">

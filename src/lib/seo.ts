@@ -25,7 +25,7 @@ export function generateBreadcrumbSchema(
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: `https://boudoirdirectory.com${item.url}`,
+      item: `https://boudoirphotographyclub.com${item.url}`,
     })),
   };
 }
@@ -43,7 +43,7 @@ export function generateLocalBusinessSchema(photographer: {
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": `https://boudoirdirectory.com/photographer/${photographer.name
+    "@id": `https://boudoirphotographyclub.com/photographer/${photographer.name
       .toLowerCase()
       .replace(/\s+/g, "-")}`,
     name: photographer.name,
@@ -56,10 +56,13 @@ export function generateLocalBusinessSchema(photographer: {
       addressRegion: photographer.state,
       addressCountry: "US",
     },
+    priceRange: "$$-$$$$",
     ...(photographer.rating && {
       aggregateRating: {
         "@type": "AggregateRating",
         ratingValue: photographer.rating,
+        bestRating: 5,
+        worstRating: 1,
         reviewCount: photographer.reviewCount || 0,
       },
     }),
@@ -72,8 +75,8 @@ export function generateWebsiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Boudoir Directory",
-    url: "https://boudoirdirectory.com",
+    name: "Boudoir Photography Club",
+    url: "https://boudoirphotographyclub.com",
     description:
       "Find the best boudoir photographers near you. Browse portfolios, read reviews, and book your session.",
     potentialAction: {
@@ -81,7 +84,7 @@ export function generateWebsiteSchema() {
       target: {
         "@type": "EntryPoint",
         urlTemplate:
-          "https://boudoirdirectory.com/search?q={search_term_string}",
+          "https://boudoirphotographyclub.com/search?q={search_term_string}",
       },
       "query-input": "required name=search_term_string",
     },

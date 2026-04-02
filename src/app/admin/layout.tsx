@@ -1,7 +1,7 @@
 import Sidebar from "@/components/admin/Sidebar";
 
 export const metadata = {
-  title: "Admin Dashboard | Boudoir Directory",
+  title: "Admin Dashboard | Boudoir Photography Club",
   robots: { index: false, follow: false },
 };
 

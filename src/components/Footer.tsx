@@ -22,7 +22,7 @@ export default function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 max-w-[1440px] mx-auto">
         <div className="md:col-span-1">
           <Link href="/" className="font-headline text-xl text-white italic block mb-6">
-            Boudoir Directory
+            Boudoir Photography Club
           </Link>
           <p className="font-body text-xs tracking-wider uppercase text-[#faf9f6] opacity-50 leading-relaxed">
             The Digital Atelier for Fine Art Photography. Empowering artists and
@@ -97,7 +97,7 @@ export default function Footer() {
       </div>
       <div className="mt-16 px-12 max-w-[1440px] mx-auto pt-8 border-t border-white/5">
         <p className="font-body text-xs tracking-wider uppercase text-[#f5c1c1] opacity-50">
-          &copy; {new Date().getFullYear()} Boudoir Directory. The Digital
+          &copy; {new Date().getFullYear()} Boudoir Photography Club. The Digital
           Atelier for Fine Art Photography.
         </p>
       </div>

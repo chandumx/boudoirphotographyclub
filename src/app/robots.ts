@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/submit"],
       },
     ],
-    sitemap: "https://boudoirdirectory.com/sitemap.xml",
+    sitemap: "https://boudoirphotographyclub.com/sitemap.xml",
   };
 }

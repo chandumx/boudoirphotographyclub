@@ -6,7 +6,7 @@ export default function Header() {
       <div className="flex justify-between items-center w-full px-8 py-6 max-w-[1440px] mx-auto">
         <div className="flex items-center space-x-8">
           <Link href="/" className="text-2xl font-headline italic text-on-surface">
-            Boudoir Directory
+            Boudoir Photography Club
           </Link>
           <div className="hidden lg:flex space-x-6">
             <Link

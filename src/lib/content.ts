@@ -76,7 +76,7 @@ export function getStateFAQs(
 }
 
 export function generateCityMetaTitle(city: string, state: string): string {
-  return `Best Boudoir Photographers in ${city}, ${state} | Boudoir Directory`;
+  return `Best Boudoir Photographers in ${city}, ${state} | Boudoir Photography Club`;
 }
 
 export function generateCityMetaDescription(
@@ -87,7 +87,7 @@ export function generateCityMetaDescription(
 }
 
 export function generateStateMetaTitle(state: string): string {
-  return `Boudoir Photographers in ${state} | Find Local Studios | Boudoir Directory`;
+  return `Boudoir Photographers in ${state} | Find Local Studios | Boudoir Photography Club`;
 }
 
 export function generateStateMetaDescription(state: string): string {

@@ -1,8 +1,10 @@
 import { MetadataRoute } from "next";
 import statesData from "@/data/states.json";
 import citiesData from "@/data/cities.json";
+import photographersData from "@/data/photographers.json";
 
-const BASE_URL = "https://boudoirdirectory.com";
+const BASE_URL = "https://boudoirphotographyclub.com";
+const LAST_UPDATED = new Date("2026-04-02");
 
 interface CityEntry {
   name: string;
@@ -17,19 +19,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: BASE_URL,
-      lastModified: new Date(),
+      lastModified: LAST_UPDATED,
       changeFrequency: "daily",
       priority: 1.0,
     },
     {
       url: `${BASE_URL}/boudoir-photographers`,
-      lastModified: new Date(),
+      lastModified: LAST_UPDATED,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${BASE_URL}/submit`,
-      lastModified: new Date(),
+      lastModified: LAST_UPDATED,
       changeFrequency: "monthly",
       priority: 0.5,
     },
@@ -37,7 +39,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const statePages: MetadataRoute.Sitemap = statesData.map((state) => ({
     url: `${BASE_URL}/boudoir-photographer/${state.slug}`,
-    lastModified: new Date(),
+    lastModified: LAST_UPDATED,
     changeFrequency: "weekly" as const,
     priority: 0.8,
   }));
@@ -46,11 +48,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const state = statesData.find((s) => s.abbreviation === city.state);
     return {
       url: `${BASE_URL}/boudoir-photographer/${state?.slug || ""}/${city.slug}`,
-      lastModified: new Date(),
+      lastModified: LAST_UPDATED,
       changeFrequency: "weekly" as const,
       priority: 0.7,
     };
   });
 
-  return [...staticPages, ...statePages, ...cityPages];
+  const photographerPages: MetadataRoute.Sitemap = photographersData.map((p) => ({
+    url: `${BASE_URL}/photographer/${p.slug}`,
+    lastModified: LAST_UPDATED,
+    changeFrequency: "weekly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...statePages, ...cityPages, ...photographerPages];
 }
