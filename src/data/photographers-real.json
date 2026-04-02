@@ -1,0 +1,620 @@
+[
+  {
+    "name": "Reclamation Boudoir",
+    "slug": "reclamation-boudoir",
+    "city": "los-angeles",
+    "state": "CA",
+    "website": "https://www.reclamationboudoir.com/",
+    "imageUrl": "https://static.showit.co/file/XvRQIo4YB6tKZfP8aj89IA/250198/taylor-066.jpg",
+    "bio": "All-female team providing glamorous photoshoots and fine art portrait photography in a luxurious Santa Monica studio. Specializing in empowering boudoir experiences that celebrate confidence and beauty.",
+    "specialties": [
+      "Fine Art",
+      "Glamour",
+      "Empowerment"
+    ],
+    "rating": 5,
+    "reviewCount": 52,
+    "verified": true,
+    "tier": "FEATURED",
+    "gallery": [
+      "https://static.showit.co/file/kIMLP5qmRpanZAkxKuLXIA/250198/editorial-boudoir-studio.jpg",
+      "https://static.showit.co/file/PALk9vT0QZ2ARKHihfVG6Q/250198/minimalist-boudoir-set.jpg",
+      "https://static.showit.co/file/CtpAoO2HRI6LJsCe0Pu8aQ/250198/los-angeles-boudoir-studio.jpg",
+      "https://static.showit.co/file/QM1tY-jHTo65d_9yjQJzzQ/250198/boudoir-photography-studio.jpg",
+      "https://static.showit.co/file/wUb4EH-30hwRnXdtzHX9JA/250198/empowering-boudoir-portrait-experience-los-angeles.jpg",
+      "https://static.showit.co/file/Nq5CNIrqqaKGT2Bmq3XNUg/250198/los-angeles-luxury-boudoir-photographer-reclamation-boudoir.jpg"
+    ]
+  },
+  {
+    "name": "Sasser Stills Boudoir",
+    "slug": "sasser-stills-boudoir",
+    "city": "los-angeles",
+    "state": "CA",
+    "website": "https://sasserstillsboudoir.com/",
+    "imageUrl": "https://images.squarespace-cdn.com/content/v1/5234a294e4b0b84289900ac0/1604967361052-EF6V86H4TVEJYNI4WYBE/CriticizingYourselfApproving2.jpg",
+    "bio": "Michael Sasser is recognized as one of the most natural, classy and timeless boudoir photographers in Southern California. Creating elegant portraits that stand the test of time.",
+    "specialties": [
+      "Classic Boudoir",
+      "Timeless Portraits",
+      "Natural Light"
+    ],
+    "rating": 4.9,
+    "reviewCount": 38,
+    "verified": true,
+    "tier": "PRO",
+    "gallery": [
+      "https://images.squarespace-cdn.com/content/v1/5234a294e4b0b84289900ac0/1604967361052-EF6V86H4TVEJYNI4WYBE/CriticizingYourselfApproving2.jpg"
+    ]
+  },
+  {
+    "name": "Your Hollywood Portrait Studio",
+    "slug": "your-hollywood-portrait-studio",
+    "city": "new-york-city",
+    "state": "NY",
+    "website": "https://yourhollywoodportrait.com/",
+    "imageUrl": null,
+    "bio": "Raya has been shooting for over 20 years, first in Paris with editorials for Harper's Bazaar and Elle Magazine. Now specializing in boudoir photography and Old Hollywood Glam in New York.",
+    "specialties": [
+      "Old Hollywood",
+      "Glamour",
+      "Editorial"
+    ],
+    "rating": 5,
+    "reviewCount": 35,
+    "verified": true,
+    "tier": "FEATURED"
+  },
+  {
+    "name": "Liberation Boudoir",
+    "slug": "liberation-boudoir",
+    "city": "miami",
+    "state": "FL",
+    "website": "https://www.liberationboudoir.com/",
+    "imageUrl": "https://static.wixstatic.com/media/39435e_0211497697ac48ae9dbdfa4f0bec50bf~mv2.jpg/v1/fill/w_1978,h_1333,al_c,q_90/39435e_0211497697ac48ae9dbdfa4f0bec50bf~mv2.webp",
+    "bio": "Located in Miami's trendy Art and Entertainment District, Liberation Boudoir offers a luxurious loft-style space with breathtaking views. Experienced hair and makeup artists on-site.",
+    "specialties": [
+      "Luxury",
+      "Loft Style",
+      "Urban"
+    ],
+    "rating": 4.9,
+    "reviewCount": 38,
+    "verified": true,
+    "tier": "PRO",
+    "gallery": [
+      "https://static.wixstatic.com/media/39435e_0211497697ac48ae9dbdfa4f0bec50bf~mv2.jpg/v1/fill/w_1978,h_1333,al_c,q_90/39435e_0211497697ac48ae9dbdfa4f0bec50bf~mv2.webp"
+    ]
+  },
+  {
+    "name": "Lisset Galeyev Photography",
+    "slug": "lisset-galeyev-photography",
+    "city": "miami",
+    "state": "FL",
+    "website": "https://lissetgaleyevphotography.com/boudoir",
+    "imageUrl": "https://static.showit.co/file/CUjSFT9uQeeTuQxKEaywMA/76620/miami_boudior_photographer.jpg",
+    "bio": "Voted Best Miami Boudoir Photographer. Creating stunning, magazine-quality boudoir portraits that celebrate beauty and confidence.",
+    "specialties": [
+      "Classic Boudoir",
+      "Magazine Style",
+      "Glamour"
+    ],
+    "rating": 5,
+    "reviewCount": 41,
+    "verified": true,
+    "tier": "FEATURED",
+    "gallery": [
+      "https://static.showit.co/file/CUjSFT9uQeeTuQxKEaywMA/76620/miami_boudior_photographer.jpg"
+    ]
+  },
+  {
+    "name": "Artistrie Co.",
+    "slug": "artistrie-co",
+    "city": "chicago",
+    "state": "IL",
+    "website": "https://artistrieco.com/boudoir",
+    "imageUrl": "https://static.showit.co/xA--WXPKxWt1yr1BL8ZViA/89411/boudoirphoto.jpg",
+    "bio": "Led by Ashley Biess with nearly two decades of experience, named Chicago's top boudoir photographer twice. Devoted to creating images that feel honest, intimate, and deeply human.",
+    "specialties": [
+      "Intimate",
+      "Editorial",
+      "Natural"
+    ],
+    "rating": 5,
+    "reviewCount": 58,
+    "verified": true,
+    "tier": "FEATURED",
+    "gallery": [
+      "https://static.showit.co/xA--WXPKxWt1yr1BL8ZViA/89411/boudoirphoto.jpg",
+      "https://static.showit.co/fur0NIdtuVXcg5ihRXkLSg/89411/artistrieboudoir-0014.jpg",
+      "https://static.showit.co/DSxbwuw5CHSboiP5D_0_sw/89411/0001.jpg",
+      "https://static.showit.co/SBqDK5dLHL4wjXZmceAU7w/89411/artistrieboudoir-0024.jpg",
+      "https://static.showit.co/lGhJoe21NcaKjhEEhLS9OQ/89411/artistrieboudoir-0001.jpg",
+      "https://static.showit.co/BeHkplyPSi-hgsAKaecj2w/89411/artistrie-boudoir-0057.jpg"
+    ]
+  },
+  {
+    "name": "Oksana Kami Portraits",
+    "slug": "oksana-kami-portraits",
+    "city": "chicago",
+    "state": "IL",
+    "website": "https://www.kami-photo.com/",
+    "imageUrl": "https://www.kami-photo.com/wp-content/uploads/2022/03/Chicago-Glamour-Boudoir-Portrait-Photography-34.jpg.webp",
+    "bio": "Accredited Master Photographer known as one of the best portrait and boudoir studio photographers in Chicago. Exclusive portrait sessions focusing on strength and power.",
+    "specialties": [
+      "Fine Art",
+      "Glamour",
+      "Empowerment"
+    ],
+    "rating": 5,
+    "reviewCount": 33,
+    "verified": true,
+    "tier": "FEATURED",
+    "gallery": [
+      "https://www.kami-photo.com/wp-content/uploads/2022/03/Chicago-Glamour-Boudoir-Portrait-Photography-34.jpg.webp"
+    ]
+  },
+  {
+    "name": "Boudoir by Elle",
+    "slug": "boudoir-by-elle",
+    "city": "chicago",
+    "state": "IL",
+    "website": "https://boudoirbyelle.com/",
+    "imageUrl": "https://static.showit.co/74156/chicago_boudoir_photographer_boudoir_by_elle_photography_30.jpg",
+    "bio": "Laurie Baker offers romantic, organic imagery. Working with clients for bridal boudoir, bachelorette parties, beauty portraits, and maternity boudoir from her Chicago-area studio.",
+    "specialties": [
+      "Bridal",
+      "Romantic",
+      "Maternity"
+    ],
+    "rating": 4.9,
+    "reviewCount": 27,
+    "verified": true,
+    "tier": "FREE",
+    "gallery": [
+      "https://static.showit.co/74156/chicago_boudoir_photographer_boudoir_by_elle_photography_30.jpg"
+    ]
+  },
+  {
+    "name": "Heather Nixon Photography",
+    "slug": "heather-nixon-photography",
+    "city": "dallas",
+    "state": "TX",
+    "website": "https://heathernixonphotography.com",
+    "imageUrl": "https://static.showit.co/file/TW3OAybmeU2bbxPzQuOWnw/167239/heather-nixon-photography-boudoir-texas-dallas-17.jpg",
+    "bio": "Premier luxury boudoir portrait photographer in the Dallas/Fort Worth area. Specializing in high-end, magazine-quality boudoir experiences.",
+    "specialties": [
+      "Luxury",
+      "Editorial",
+      "Portraits"
+    ],
+    "rating": 5,
+    "reviewCount": 47,
+    "verified": true,
+    "tier": "FEATURED",
+    "gallery": [
+      "https://static.showit.co/file/TW3OAybmeU2bbxPzQuOWnw/167239/heather-nixon-photography-boudoir-texas-dallas-17.jpg"
+    ]
+  },
+  {
+    "name": "Butler & Badou Portraits",
+    "slug": "butler-badou-portraits",
+    "city": "dallas",
+    "state": "TX",
+    "website": "https://www.butlerbadouportraits.com",
+    "imageUrl": "https://images.squarespace-cdn.com/content/v1/59208a5f15d5dbdde22d6d1a/4dab5d8a-f715-4604-a291-0a09740afae0/bbp-long_white_low+cropped.png",
+    "bio": "Founded in 2012, a leading luxury photography studio in the Dallas-Fort Worth area. Corporate, family, and boudoir portrait experiences.",
+    "specialties": [
+      "Luxury",
+      "Corporate",
+      "Family"
+    ],
+    "rating": 4.9,
+    "reviewCount": 35,
+    "verified": true,
+    "tier": "PRO",
+    "gallery": [
+      "https://images.squarespace-cdn.com/content/v1/59208a5f15d5dbdde22d6d1a/e41be5ff-17b7-4bb4-b83f-f140fdc55858/Dallas+luxury+boudoir+photography+session+in+studio",
+      "https://images.squarespace-cdn.com/content/v1/59208a5f15d5dbdde22d6d1a/b10ea868-d2f7-40f2-8847-e59dad509d99/Bridal+boudoir+photography+in+Dallas+with+luxury+styling",
+      "https://images.squarespace-cdn.com/content/v1/59208a5f15d5dbdde22d6d1a/17e6b039-967c-4a68-9a60-3ee079efa37c/Dallas+luxury+boudoir+photography+session+in+studio",
+      "https://images.squarespace-cdn.com/content/v1/59208a5f15d5dbdde22d6d1a/5cd8a9c8-ed4a-46ca-9e69-3ce9ece2e93d/Luxury+family+photography+with+heirloom+quality+prints",
+      "https://images.squarespace-cdn.com/content/v1/59208a5f15d5dbdde22d6d1a/1653364128676-0R97RIPC0846WFUM1OMU/BBP-10.jpg?format=2500w",
+      "https://images.squarespace-cdn.com/content/v1/59208a5f15d5dbdde22d6d1a/de524c46-586d-4415-8ec0-ca0470812904/Dallas+executive+headshot+for+C-suite+branding"
+    ]
+  },
+  {
+    "name": "Stunning Boudoir Dallas",
+    "slug": "stunning-boudoir-dallas",
+    "city": "dallas",
+    "state": "TX",
+    "website": "https://www.stunningboudoirdallas.com/",
+    "imageUrl": null,
+    "bio": "Dallas' top-tier luxury boudoir portrait experience. Crafting magazine-quality portraits for everyday women in an empowering, comfortable environment.",
+    "specialties": [
+      "Luxury",
+      "Magazine Style",
+      "Empowerment"
+    ],
+    "rating": 4.9,
+    "reviewCount": 39,
+    "verified": true,
+    "tier": "PRO"
+  },
+  {
+    "name": "Royal Lune Photo",
+    "slug": "royal-lune-photo",
+    "city": "dallas",
+    "state": "TX",
+    "website": "https://royallunephoto.com/",
+    "imageUrl": "https://static.showit.co/file/X4F6RB6eLAbG3bQbHcoDzQ/87415/fineartnudephotography-171.jpg",
+    "bio": "Fine art boudoir photography experience in Dallas. Creating ethereal, artistic portraits that celebrate feminine beauty.",
+    "specialties": [
+      "Fine Art",
+      "Ethereal",
+      "Artistic"
+    ],
+    "rating": 5,
+    "reviewCount": 28,
+    "verified": true,
+    "tier": "FREE",
+    "gallery": [
+      "https://static.showit.co/file/X4F6RB6eLAbG3bQbHcoDzQ/87415/fineartnudephotography-171.jpg"
+    ]
+  },
+  {
+    "name": "J Marie Photography Studios",
+    "slug": "j-marie-photography-studios",
+    "city": "houston",
+    "state": "TX",
+    "website": "https://www.jmariejay.com/",
+    "imageUrl": null,
+    "bio": "Houston's high-end luxury boudoir photographer. Creating stunning, editorial-quality portraits in a comfortable, professional studio environment.",
+    "specialties": [
+      "Luxury",
+      "Editorial",
+      "High-End"
+    ],
+    "rating": 5,
+    "reviewCount": 52,
+    "verified": true,
+    "tier": "FEATURED"
+  },
+  {
+    "name": "The Boudoir Cafe",
+    "slug": "the-boudoir-cafe",
+    "city": "las-vegas",
+    "state": "NV",
+    "website": "https://theboudoircafe.com/",
+    "imageUrl": "https://theboudoircafe.com/wp-content/uploads/2017/07/Screenshot-2024-05-25-at-4.11.40-PM.png",
+    "bio": "Led by Cherie Steinberg and Hedley Jones, both Nikon-endorsed and ranked among the best boudoir photographers in Las Vegas. Recognized by Huffington Post, Shutterbug Magazine, and PPA.",
+    "specialties": [
+      "Luxury",
+      "Award-Winning",
+      "Editorial"
+    ],
+    "rating": 5,
+    "reviewCount": 63,
+    "verified": true,
+    "tier": "FEATURED",
+    "gallery": [
+      "https://theboudoircafe.com/wp-content/uploads/2017/07/Screenshot-2024-05-25-at-4.11.40-PM.png",
+      "https://theboudoircafe.com/wp-content/uploads/2019/05/COVER-1_748x1024.jpg",
+      "https://theboudoircafe.com/wp-content/uploads/2019/05/COVER-2_748x1024.jpg",
+      "https://theboudoircafe.com/wp-content/uploads/2019/05/COVER-9_748x1024.jpg",
+      "https://theboudoircafe.com/wp-content/uploads/2019/05/COVER-5_748x1024.jpg",
+      "https://theboudoircafe.com/wp-content/uploads/2019/05/COVER-10_748x1024.jpg"
+    ]
+  },
+  {
+    "name": "T.Marie Creative Co.",
+    "slug": "t-marie-creative-co",
+    "city": "las-vegas",
+    "state": "NV",
+    "website": "https://tmariecreativeco.com/",
+    "imageUrl": "https://tmariecreativeco.com/wp-content/uploads/2024/11/Alexis-New-Hero.jpg",
+    "bio": "The #1 provider of boudoir photography in Las Vegas. Life-changing boudoir studio experience that includes hair, makeup, and more.",
+    "specialties": [
+      "Full Service",
+      "Transformation",
+      "Luxury"
+    ],
+    "rating": 4.9,
+    "reviewCount": 48,
+    "verified": true,
+    "tier": "PRO",
+    "gallery": [
+      "https://tmariecreativeco.com/wp-content/uploads/2024/11/Alexis-New-Hero.jpg",
+      "https://tmariecreativeco.com/wp-content/uploads/2022/03/hp-about-img.jpg",
+      "https://tmariecreativeco.com/wp-content/uploads/2024/11/Ashima-27-683x1024.jpg",
+      "https://tmariecreativeco.com/wp-content/uploads/2022/07/image1.jpg",
+      "https://tmariecreativeco.com/wp-content/uploads/2022/07/image5.jpg",
+      "https://tmariecreativeco.com/wp-content/uploads/2022/07/image4.jpg"
+    ]
+  },
+  {
+    "name": "Grace In Lace Boudoir",
+    "slug": "grace-in-lace-boudoir",
+    "city": "las-vegas",
+    "state": "NV",
+    "website": "https://www.graceinlaceboudoir.com/",
+    "imageUrl": "https://images.squarespace-cdn.com/content/v1/65c2a86b8c74352643a31fbc/d440fb9e-d9fa-48c9-8917-26db879716f7/las-vegas-boudoir-photography.jpg",
+    "bio": "Las Vegas' #1 Boudoir Photography Experience by Terri Zachea. Elegant, empowering sessions in a stunning studio setting.",
+    "specialties": [
+      "Elegant",
+      "Empowerment",
+      "Bridal"
+    ],
+    "rating": 5,
+    "reviewCount": 37,
+    "verified": true,
+    "tier": "PRO",
+    "gallery": [
+      "https://images.squarespace-cdn.com/content/v1/65c2a86b8c74352643a31fbc/d440fb9e-d9fa-48c9-8917-26db879716f7/las-vegas-boudoir-photography.jpg"
+    ]
+  },
+  {
+    "name": "LV Boudoir Studio",
+    "slug": "lv-boudoir-studio",
+    "city": "las-vegas",
+    "state": "NV",
+    "website": "https://www.lvboudoirstudio.com/",
+    "imageUrl": "https://www.lvboudoirstudio.com/wp-content/uploads/2021/01/las-vegas-boudoir-photography.jpg",
+    "bio": "Luxury Boudoir Photography Studio in Las Vegas. An experience focused on confidence, empowerment, love, and celebrating beauty.",
+    "specialties": [
+      "Luxury",
+      "Confidence",
+      "Celebration"
+    ],
+    "rating": 4.8,
+    "reviewCount": 31,
+    "verified": true,
+    "tier": "FREE",
+    "gallery": [
+      "https://www.lvboudoirstudio.com/wp-content/uploads/2021/01/las-vegas-boudoir-photography.jpg"
+    ]
+  },
+  {
+    "name": "One Soul Boudoir",
+    "slug": "one-soul-boudoir",
+    "city": "atlanta",
+    "state": "GA",
+    "website": "https://onesoulboudoir.com/",
+    "imageUrl": null,
+    "bio": "Atlanta-based photography haven dedicated to celebrating the unique beauty of every woman. Complimentary consultation, professional makeover, magazine-style photoshoot with unlimited wardrobe changes.",
+    "specialties": [
+      "Magazine Style",
+      "Full Service",
+      "Empowerment"
+    ],
+    "rating": 5,
+    "reviewCount": 55,
+    "verified": true,
+    "tier": "FEATURED"
+  },
+  {
+    "name": "OWN Boudoir Studio",
+    "slug": "own-boudoir-studio",
+    "city": "atlanta",
+    "state": "GA",
+    "website": "https://www.ownboudoir.com/",
+    "imageUrl": "https://static.wixstatic.com/media/c1b522_483b1124b18f4584b53c0c80f09964e3~mv2.png",
+    "bio": "Leading boudoir photography studio in metro Atlanta, welcoming over 2000 clients since 2009. Sarah's decade of experience ensures you feel relaxed and confident.",
+    "specialties": [
+      "Classic Boudoir",
+      "Experienced",
+      "Comfortable"
+    ],
+    "rating": 4.9,
+    "reviewCount": 68,
+    "verified": true,
+    "tier": "PRO",
+    "gallery": [
+      "https://static.wixstatic.com/media/c1b522_483b1124b18f4584b53c0c80f09964e3~mv2.png"
+    ]
+  },
+  {
+    "name": "J'adore Boudoir Photography",
+    "slug": "jadore-boudoir-photography",
+    "city": "san-diego",
+    "state": "CA",
+    "website": "https://jadoreboudoirphotography.com/",
+    "imageUrl": "https://jadoreboudoirphotography.com/wp-content/uploads/2023/10/tastefully-seductive-hero-2-725x1024.webp",
+    "bio": "Shannon and her team offer a dramatic spin on boudoir photography in a safe, boutique San Diego studio environment.",
+    "specialties": [
+      "Dramatic",
+      "Boutique",
+      "Safe Space"
+    ],
+    "rating": 5,
+    "reviewCount": 39,
+    "verified": true,
+    "tier": "FEATURED",
+    "gallery": [
+      "https://jadoreboudoirphotography.com/wp-content/uploads/2023/10/tastefully-seductive-hero-2-725x1024.webp"
+    ]
+  },
+  {
+    "name": "Portraits by Z",
+    "slug": "portraits-by-z",
+    "city": "san-diego",
+    "state": "CA",
+    "website": "https://www.portraitsbyz.com/",
+    "imageUrl": "https://www.portraitsbyz.com/wp-content/uploads/2024/12/Jennifer-100-copy-2.jpg",
+    "bio": "Stunning San Diego boudoir photography by Zeynep Dogu, one of the most experienced boudoir photographers in the area.",
+    "specialties": [
+      "Portraits",
+      "Experienced",
+      "Professional"
+    ],
+    "rating": 4.9,
+    "reviewCount": 33,
+    "verified": true,
+    "tier": "PRO",
+    "gallery": [
+      "https://www.portraitsbyz.com/wp-content/uploads/2024/12/Jennifer-100-copy-2.jpg"
+    ]
+  },
+  {
+    "name": "Love Spell Boudoir",
+    "slug": "love-spell-boudoir",
+    "city": "san-diego",
+    "state": "CA",
+    "website": "https://lovespellboudoir.com/",
+    "imageUrl": "https://static.showit.co/file/oYdqpxc3B5N3NuPqR1uz5A/281296/love-spell-boudoir-mumford_house_jill-99.jpg",
+    "bio": "San Diego boudoir and couples boudoir photographer specializing in romantic, intimate photography for individuals and couples.",
+    "specialties": [
+      "Couples",
+      "Romantic",
+      "Intimate"
+    ],
+    "rating": 4.9,
+    "reviewCount": 27,
+    "verified": true,
+    "tier": "PRO",
+    "gallery": [
+      "https://static.showit.co/file/oYdqpxc3B5N3NuPqR1uz5A/281296/love-spell-boudoir-mumford_house_jill-99.jpg"
+    ]
+  },
+  {
+    "name": "Phoenix Boudoir Studios",
+    "slug": "phoenix-boudoir-studios",
+    "city": "phoenix",
+    "state": "AZ",
+    "website": "https://www.phoenixboudoirstudios.com/",
+    "imageUrl": null,
+    "bio": "Luxury destination for bridal and empowerment boudoir photography in Phoenix. Creating stunning, confidence-boosting portraits.",
+    "specialties": [
+      "Bridal",
+      "Empowerment",
+      "Luxury"
+    ],
+    "rating": 5,
+    "reviewCount": 36,
+    "verified": true,
+    "tier": "FEATURED"
+  },
+  {
+    "name": "Belle Boudoir Photography",
+    "slug": "belle-boudoir-photography",
+    "city": "seattle",
+    "state": "WA",
+    "website": "https://www.boudoirphotographyseattle.com/",
+    "imageUrl": null,
+    "bio": "Seattle's premier boudoir photography studio offering elegant, empowering sessions in a comfortable, professional environment.",
+    "specialties": [
+      "Elegant",
+      "Empowerment",
+      "Professional"
+    ],
+    "rating": 5,
+    "reviewCount": 41,
+    "verified": true,
+    "tier": "FEATURED"
+  },
+  {
+    "name": "Seattle Boudoir Company",
+    "slug": "seattle-boudoir-company",
+    "city": "seattle",
+    "state": "WA",
+    "website": "https://www.seattleboudoircompany.com/",
+    "imageUrl": "https://images.squarespace-cdn.com/content/v1/5c82c526755be20889db43c9/88c693f5-777d-4e2f-aea2-114f6f209f3a/Seattle-Boudoir-Photography.webp",
+    "bio": "Owner Molly Blair creates safe, comfortable boudoir experiences in Seattle. Professional photography celebrating every body type.",
+    "specialties": [
+      "Inclusive",
+      "Comfortable",
+      "Professional"
+    ],
+    "rating": 4.9,
+    "reviewCount": 34,
+    "verified": true,
+    "tier": "PRO",
+    "gallery": [
+      "https://images.squarespace-cdn.com/content/v1/5c82c526755be20889db43c9/88c693f5-777d-4e2f-aea2-114f6f209f3a/Seattle-Boudoir-Photography.webp"
+    ]
+  },
+  {
+    "name": "Jacqueline Benet Photography",
+    "slug": "jacqueline-benet-photography",
+    "city": "seattle",
+    "state": "WA",
+    "website": "https://jacquelinebenet.com/",
+    "imageUrl": "https://static.showit.co/file/Bfnwq5Nrvt1RRiv7N4cMEQ/123654/villa-la-joya-wedding-photography-jacqueline-benet_0056.jpg",
+    "bio": "Specializing in creating elegant and flattering boudoir images for women in Seattle. Artistic, modern approach to intimate portraiture.",
+    "specialties": [
+      "Elegant",
+      "Modern",
+      "Artistic"
+    ],
+    "rating": 4.9,
+    "reviewCount": 26,
+    "verified": true,
+    "tier": "PRO",
+    "gallery": [
+      "https://static.showit.co/file/Bfnwq5Nrvt1RRiv7N4cMEQ/123654/villa-la-joya-wedding-photography-jacqueline-benet_0056.jpg"
+    ]
+  },
+  {
+    "name": "Modern Muse Boudoir",
+    "slug": "modern-muse-boudoir",
+    "city": "boston",
+    "state": "MA",
+    "website": "https://modernmuseboudoir.com/",
+    "imageUrl": "https://modernmuseboudoir.com/wp-content/uploads/2020/03/2019_0321_125219.jpg",
+    "bio": "Award-winning boudoir photography in Boston serving all of New England. Crafting beautiful experiences for women, men, couples, and brides that instill confidence and power.",
+    "specialties": [
+      "Award-Winning",
+      "Bridal",
+      "Couples"
+    ],
+    "rating": 5,
+    "reviewCount": 48,
+    "verified": true,
+    "tier": "FEATURED",
+    "gallery": [
+      "https://modernmuseboudoir.com/wp-content/uploads/2020/03/2019_0321_125219.jpg",
+      "https://modernmuseboudoir.com/wp-content/uploads/2025/07/boston-couples-boudoir-photos-05-scaled-1.jpg",
+      "https://modernmuseboudoir.com/wp-content/uploads/2024/01/boston-boudoir-fine-art-intimate-portraits-68.jpg",
+      "https://modernmuseboudoir.com/wp-content/uploads/2025/07/boston-boudoir-photography-intimate-portraits-79-1.jpg",
+      "https://modernmuseboudoir.com/wp-content/uploads/2025/07/modern_muse_boudoir_01.jpg",
+      "https://modernmuseboudoir.com/wp-content/uploads/2025/07/boston-boudoir-black-and-white.jpg"
+    ]
+  },
+  {
+    "name": "Allebach Photography",
+    "slug": "allebach-photography",
+    "city": "philadelphia",
+    "state": "PA",
+    "website": "https://allebachphotography.com/",
+    "imageUrl": "https://cdn.goodgallery.com/fe4824d3-2a84-460a-a23b-a26f28947ad1/r/0800/2kcdflyy/couples-boudoir-bedroom-eyes-photography.jpg",
+    "bio": "The #1 couples boudoir photography studio in the US. Believing everyone deserves closeness, quality time, and artwork through couples boudoir.",
+    "specialties": [
+      "Couples",
+      "Inclusive",
+      "Award-Winning"
+    ],
+    "rating": 5,
+    "reviewCount": 56,
+    "verified": true,
+    "tier": "FEATURED",
+    "gallery": [
+      "https://cdn.goodgallery.com/fe4824d3-2a84-460a-a23b-a26f28947ad1/r/0800/2kcdflyy/couples-boudoir-bedroom-eyes-photography.jpg"
+    ]
+  },
+  {
+    "name": "Appeal Photography",
+    "slug": "appeal-photography",
+    "city": "washington",
+    "state": "VA",
+    "website": "https://www.appealphotography.com/",
+    "imageUrl": null,
+    "bio": "Award-winning boutique boudoir and fine art photography studio with locations in Alexandria, Virginia and Washington, DC. Voted best boudoir photographer multiple years running.",
+    "specialties": [
+      "Fine Art",
+      "Award-Winning",
+      "Boutique"
+    ],
+    "rating": 5,
+    "reviewCount": 44,
+    "verified": true,
+    "tier": "FEATURED"
+  }
+]

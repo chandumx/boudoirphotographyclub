@@ -1,0 +1,41 @@
+[
+  {
+    "id": "1",
+    "title": "Preparing for Your First Boudoir Session",
+    "slug": "preparing-for-first-boudoir-session",
+    "excerpt": "Everything you need to know before stepping into the studio for the first time.",
+    "content": "A boudoir session is a transformative experience that celebrates your unique beauty and confidence. Here is how to prepare for a session that you will cherish forever. Start by choosing outfits that make you feel amazing. Bring 3-4 options including lingerie, a cozy sweater, and perhaps a silk robe. Get plenty of rest the night before, stay hydrated, and avoid trying new skincare products. Most importantly, come with an open mind and trust your photographer.",
+    "category": "Preparation",
+    "status": "published",
+    "metaTitle": "How to Prepare for Your First Boudoir Photography Session",
+    "metaDescription": "Expert tips on preparing for your first boudoir photo shoot. From what to wear to skincare tips, everything you need to know.",
+    "createdAt": "2026-03-15T10:00:00Z",
+    "imageUrl": "/style-romantic.png"
+  },
+  {
+    "id": "2",
+    "title": "What to Wear: The Ultimate Boudoir Style Guide",
+    "slug": "what-to-wear-boudoir-guide",
+    "excerpt": "From lace to silk, discover the perfect wardrobe for your boudoir experience.",
+    "content": "Choosing what to wear to your boudoir session is one of the most exciting parts of the experience. The key is selecting pieces that make you feel confident and beautiful. Popular choices include lace bodysuits, silk chemises, oversized sweaters worn off the shoulder, button-down shirts, and elegant robes. Many photographers offer a wardrobe collection for clients to borrow. Bring 3-4 outfit changes for variety in your final gallery.",
+    "category": "Styling",
+    "status": "published",
+    "metaTitle": "What to Wear to a Boudoir Photo Shoot | Complete Style Guide",
+    "metaDescription": "Discover the best outfits for your boudoir session. Expert styling tips for lingerie, accessories, and wardrobe planning.",
+    "createdAt": "2026-03-20T10:00:00Z",
+    "imageUrl": "/style-bridal.png"
+  },
+  {
+    "id": "3",
+    "title": "How to Choose the Right Boudoir Photographer",
+    "slug": "how-to-choose-boudoir-photographer",
+    "excerpt": "Finding the perfect photographer is key to an empowering boudoir experience.",
+    "content": "Your boudoir photographer should be someone who makes you feel completely at ease. Start by reviewing portfolios to find a style that resonates with you. Read client reviews and testimonials. Schedule a consultation to discuss your vision and ask about their process. Key questions include: How long have you been shooting boudoir? What is included in your packages? Do you provide hair and makeup? What is your retouching style? Trust your instincts about the connection you feel.",
+    "category": "Advice",
+    "status": "published",
+    "metaTitle": "How to Choose the Best Boudoir Photographer Near You",
+    "metaDescription": "Expert advice on selecting the right boudoir photographer. Questions to ask, what to look for in portfolios, and red flags to avoid.",
+    "createdAt": "2026-03-25T10:00:00Z",
+    "imageUrl": "/style-fine-art.png"
+  }
+]

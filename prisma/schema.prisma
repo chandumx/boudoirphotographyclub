@@ -1,0 +1,183 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model State {
+  id              String   @id @default(cuid())
+  name            String   @unique
+  slug            String   @unique
+  abbreviation    String   @unique @db.Char(2)
+  description     String?  @db.Text
+  metaTitle       String?
+  metaDescription String?  @db.Text
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  counties      County[]
+  cities        City[]
+  photographers Photographer[]
+
+  @@index([slug])
+}
+
+model County {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String
+  description String?  @db.Text
+  stateId     String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  state  State  @relation(fields: [stateId], references: [id])
+  cities City[]
+
+  @@unique([slug, stateId])
+  @@index([stateId])
+}
+
+model City {
+  id              String   @id @default(cuid())
+  name            String
+  slug            String
+  stateId         String
+  countyId        String?
+  population      Int      @default(0)
+  latitude        Float    @default(0)
+  longitude       Float    @default(0)
+  description     String?  @db.Text
+  metaTitle       String?
+  metaDescription String?  @db.Text
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  state         State          @relation(fields: [stateId], references: [id])
+  county        County?        @relation(fields: [countyId], references: [id])
+  zipCodes      ZipCode[]
+  photographers Photographer[]
+
+  @@unique([slug, stateId])
+  @@index([stateId])
+  @@index([slug])
+  @@index([population(sort: Desc)])
+}
+
+model ZipCode {
+  id     String @id @default(cuid())
+  code   String
+  cityId String
+
+  city City @relation(fields: [cityId], references: [id])
+
+  @@unique([code])
+  @@index([cityId])
+}
+
+model Photographer {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  email       String?
+  phone       String?
+  website     String?
+  bio         String?  @db.Text
+  imageUrl    String?
+  specialties String[] @default([])
+  cityId      String
+  stateId     String
+  tier        Tier     @default(FREE)
+  featured    Boolean  @default(false)
+  verified    Boolean  @default(false)
+  rating      Float    @default(0)
+  reviewCount Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  city          City           @relation(fields: [cityId], references: [id])
+  state         State          @relation(fields: [stateId], references: [id])
+  reviews       Review[]
+  listings      Listing[]
+  subscriptions Subscription[]
+  leads         Lead[]
+
+  @@index([cityId])
+  @@index([stateId])
+  @@index([slug])
+  @@index([tier])
+  @@index([featured])
+}
+
+enum Tier {
+  FREE
+  PRO
+  FEATURED
+}
+
+model Review {
+  id             String   @id @default(cuid())
+  photographerId String
+  rating         Float
+  content        String   @db.Text
+  authorName     String
+  createdAt      DateTime @default(now())
+
+  photographer Photographer @relation(fields: [photographerId], references: [id])
+
+  @@index([photographerId])
+}
+
+model Listing {
+  id             String   @id @default(cuid())
+  photographerId String
+  tier           Tier     @default(FREE)
+  startDate      DateTime @default(now())
+  endDate        DateTime?
+  active         Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  photographer Photographer @relation(fields: [photographerId], references: [id])
+
+  @@index([photographerId])
+}
+
+model Subscription {
+  id             String             @id @default(cuid())
+  photographerId String
+  plan           Tier               @default(FREE)
+  stripeId       String?
+  status         SubscriptionStatus @default(ACTIVE)
+  createdAt      DateTime           @default(now())
+  updatedAt      DateTime           @updatedAt
+
+  photographer Photographer @relation(fields: [photographerId], references: [id])
+
+  @@index([photographerId])
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  CANCELED
+  PAST_DUE
+  TRIALING
+}
+
+model Lead {
+  id             String   @id @default(cuid())
+  photographerId String?
+  cityId         String?
+  name           String
+  email          String
+  phone          String?
+  message        String   @db.Text
+  createdAt      DateTime @default(now())
+
+  photographer Photographer? @relation(fields: [photographerId], references: [id])
+
+  @@index([photographerId])
+}
