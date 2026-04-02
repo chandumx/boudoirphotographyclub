@@ -97,7 +97,9 @@
       "Bash(ls D:/photo/src/app/blog/*/page.tsx)",
       "Bash(ls -la D:/photo/src/app/blog/*/page.tsx)",
       "Bash(vercel env:*)",
-      "Bash(vercel --prod --yes --force)"
+      "Bash(vercel --prod --yes --force)",
+      "Bash(node scripts/fetch-gmaps-images.js)",
+      "Bash(node scripts/fetch-gmaps-v2.js)"
     ]
   }
 }
