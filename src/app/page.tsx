@@ -280,9 +280,9 @@ export default function HomePage() {
         <div className="max-w-[1440px] mx-auto">
           <div className="flex justify-between items-end mb-16">
             <h2 className="font-headline text-4xl">The Atelier Journal</h2>
-            <span className="font-label text-xs uppercase tracking-widest text-primary underline underline-offset-8">
+            <Link href="/blog" className="font-label text-xs uppercase tracking-widest text-primary underline underline-offset-8 hover:opacity-70 transition-opacity">
               Read All Guides
-            </span>
+            </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {blogPosts.map((post, idx) => (
