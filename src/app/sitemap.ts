@@ -229,6 +229,135 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
+  const blogPages2: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/blog/best-boudoir-cameras-guide`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/best-boudoir-photographer-boston`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/best-boudoir-photographer-columbus`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/best-boudoir-photographer-detroit`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/best-boudoir-photographer-las-vegas`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/best-boudoir-photographer-minneapolis`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/best-boudoir-photographer-philadelphia`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/best-boudoir-photographer-phoenix`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/best-boudoir-photographer-portland`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/best-boudoir-photographer-san-diego`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/best-boudoir-photographer-san-francisco`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/best-boudoir-photographer-seattle`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/birthday-boudoir-photoshoot`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/boudoir-album-design-ideas`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/boudoir-confidence-guide`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/boudoir-lighting-guide`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/boudoir-vs-portrait-photography`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/holiday-boudoir-gift-guide`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/how-to-start-boudoir-business`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/summer-boudoir-ideas`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog/valentines-day-boudoir`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+  ];
+
   const styleKeys = ["romantic", "luxury", "bridal", "dark-moody", "fine-art", "glamour", "couples-boudoir", "plus-size", "maternity-boudoir", "women-owned"];
   const topCitiesForStyles = (citiesData as CityEntry[])
     .sort((a, b) => b.population - a.population)
@@ -249,5 +378,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }
 
-  return [...staticPages, ...statePages, ...cityPages, ...photographerPages, ...stylePages];
+  return [...staticPages, ...statePages, ...cityPages, ...photographerPages, ...blogPages2, ...stylePages];
 }
