@@ -99,7 +99,8 @@
       "Bash(vercel env:*)",
       "Bash(vercel --prod --yes --force)",
       "Bash(node scripts/fetch-gmaps-images.js)",
-      "Bash(node scripts/fetch-gmaps-v2.js)"
+      "Bash(node scripts/fetch-gmaps-v2.js)",
+      "Bash(node scripts/add-city-photographers.js)"
     ]
   }
 }
