@@ -16,16 +16,10 @@ export default function Header() {
               Find Talent
             </Link>
             <Link
-              href="/#how-it-works"
+              href="/blog/what-is-boudoir-photography"
               className="font-headline uppercase tracking-widest text-xs text-on-surface opacity-70 hover:opacity-100 transition-opacity duration-300"
             >
-              How it Works
-            </Link>
-            <Link
-              href="/submit"
-              className="font-headline uppercase tracking-widest text-xs text-on-surface opacity-70 hover:opacity-100 transition-opacity duration-300"
-            >
-              Pricing
+              Blog
             </Link>
           </div>
         </div>
