@@ -122,15 +122,15 @@ export default async function PhotographerPage({ params }: PageProps) {
           ]}
         />
 
-        {/* Hero Gallery — Asymmetric Editorial Layout */}
-        <section className="mt-10 mb-16 grid grid-cols-12 gap-3 h-[560px]">
-          <div className="col-span-12 lg:col-span-8 relative overflow-hidden rounded-lg group">
+        {/* Hero Section */}
+        <section className="mt-10 mb-16">
+          <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] overflow-hidden rounded-lg">
             <img
               src={heroImg}
               alt={`${photographer.name} — ${photographer.specialties[0] || "Boudoir"} Photography in ${cityName}`}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="w-full h-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 right-6">
               <div className="flex items-center gap-3 mb-2">
                 {photographer.verified && (
@@ -149,29 +149,13 @@ export default async function PhotographerPage({ params }: PageProps) {
                   </span>
                 )}
               </div>
-              <h1 className="font-headline text-3xl md:text-4xl lg:text-5xl italic text-white leading-tight">
+              <h1 className="font-headline text-2xl sm:text-3xl lg:text-5xl italic text-white leading-tight">
                 {photographer.name}
               </h1>
               <p className="font-label text-xs uppercase tracking-widest text-white/70 mt-2">
                 {photographer.specialties.join(" / ")} &bull; {cityName},{" "}
                 {stateName}
               </p>
-            </div>
-          </div>
-          <div className="hidden lg:grid lg:col-span-4 grid-rows-2 gap-3">
-            <div className="overflow-hidden rounded-lg">
-              <img
-                src={gallery[1] || gallery[0]}
-                alt={`${photographer.name} ${photographer.specialties[1] || "intimate"} boudoir photography in ${cityName}`}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            <div className="overflow-hidden rounded-lg">
-              <img
-                src={gallery[2] || gallery[0]}
-                alt={`${photographer.name} ${photographer.specialties[2] || "professional"} portrait session ${cityName}, ${stateName}`}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-              />
             </div>
           </div>
         </section>
@@ -278,16 +262,12 @@ export default async function PhotographerPage({ params }: PageProps) {
                 {gallery.map((img, idx) => (
                   <div
                     key={idx}
-                    className={`overflow-hidden rounded-lg group/img ${
-                      idx === 0
-                        ? "col-span-2 row-span-2 aspect-square"
-                        : "aspect-[3/4]"
-                    }`}
+                    className="overflow-hidden rounded-lg group/img aspect-[3/4]"
                   >
                     <img
                       src={img}
                       alt={`${photographer.name} portfolio — ${photographer.specialties[idx] || "boudoir photography"} sample ${idx + 1}`}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-105"
+                      className="w-full h-full object-cover object-center transition-transform duration-700 group-hover/img:scale-105"
                     />
                   </div>
                 ))}
