@@ -201,9 +201,33 @@ export default async function PhotographerPage({ params }: PageProps) {
               </div>
             )}
 
+            {/* Badges */}
+            <div className="flex flex-wrap gap-3 mb-10">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-pink-50 text-pink-700 border border-pink-200">
+                <span className="material-symbols-outlined text-sm">female</span>
+                Women-Owned
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200">
+                <span className="material-symbols-outlined text-sm">photo_camera</span>
+                Boudoir Photography
+              </span>
+              {photographer.tier === "FEATURED" && (
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200">
+                  <span className="material-symbols-outlined text-sm">workspace_premium</span>
+                  Featured Studio
+                </span>
+              )}
+              {photographer.verified && (
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-green-50 text-green-700 border border-green-200">
+                  <span className="material-symbols-outlined text-sm">verified</span>
+                  Verified
+                </span>
+              )}
+            </div>
+
             {/* Details Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 mb-14">
-              <div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-14">
+              <div className="bg-surface-container-lowest p-4 rounded-sm">
                 <p className="font-label text-[10px] uppercase tracking-widest text-outline mb-1">
                   Location
                 </p>
@@ -211,7 +235,7 @@ export default async function PhotographerPage({ params }: PageProps) {
                   {cityName}, {stateName}
                 </p>
               </div>
-              <div>
+              <div className="bg-surface-container-lowest p-4 rounded-sm">
                 <p className="font-label text-[10px] uppercase tracking-widest text-outline mb-1">
                   Style
                 </p>
@@ -219,21 +243,32 @@ export default async function PhotographerPage({ params }: PageProps) {
                   {photographer.specialties[0] || "Boudoir"}
                 </p>
               </div>
-              <div>
+              <div className="bg-surface-container-lowest p-4 rounded-sm">
                 <p className="font-label text-[10px] uppercase tracking-widest text-outline mb-1">
                   Rating
                 </p>
+                <div className="flex items-center gap-1">
+                  <span className="material-symbols-outlined text-amber-500 text-sm" style={{fontVariationSettings: "'FILL' 1"}}>star</span>
+                  <p className="text-sm text-on-surface font-medium">
+                    {photographer.rating.toFixed(1)} ({photographer.reviewCount} reviews)
+                  </p>
+                </div>
+              </div>
+              <div className="bg-surface-container-lowest p-4 rounded-sm">
+                <p className="font-label text-[10px] uppercase tracking-widest text-outline mb-1">
+                  Budget
+                </p>
                 <p className="text-sm text-on-surface font-medium">
-                  {photographer.rating.toFixed(1)} / 5.0
+                  {photographer.tier === "FEATURED" ? "$$$$ · Premium" : photographer.tier === "PRO" ? "$$$ · Mid-Range" : "$$ · Affordable"}
                 </p>
               </div>
             </div>
 
-            {/* Specialties */}
+            {/* Specialties & Category */}
             {photographer.specialties.length > 0 && (
               <div className="mb-14">
                 <h2 className="font-label text-[10px] uppercase tracking-widest text-outline mb-4">
-                  Specialties
+                  Specialties & Categories
                 </h2>
                 <div className="flex flex-wrap gap-2">
                   {photographer.specialties.map((s) => (
@@ -244,6 +279,12 @@ export default async function PhotographerPage({ params }: PageProps) {
                       {s}
                     </span>
                   ))}
+                  <span className="font-label text-[10px] uppercase tracking-wider text-on-surface-variant bg-surface-container-low px-3 py-1.5 rounded-sm">
+                    Portrait Photography
+                  </span>
+                  <span className="font-label text-[10px] uppercase tracking-wider text-on-surface-variant bg-surface-container-low px-3 py-1.5 rounded-sm">
+                    Women&apos;s Empowerment
+                  </span>
                 </div>
               </div>
             )}
