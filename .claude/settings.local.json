@@ -93,7 +93,9 @@
       "Bash(sed:*)",
       "Bash(vercel --prod --yes)",
       "WebFetch(domain:boudoirphotographyclub.com)",
-      "Bash(grep -oP 'google-site-verification.{0,80}')"
+      "Bash(grep -oP 'google-site-verification.{0,80}')",
+      "Bash(ls D:/photo/src/app/blog/*/page.tsx)",
+      "Bash(ls -la D:/photo/src/app/blog/*/page.tsx)"
     ]
   }
 }
