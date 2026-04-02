@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import PublicLayout from "@/components/PublicLayout";
+
+const GA_ID = "G-B848QX8EF4";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://boudoirphotographyclub.com"),
@@ -56,6 +59,94 @@ export default function RootLayout({
   return (
     <html lang="en" className="light">
       <head>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+
+            // Custom events for SEO goal tracking
+            // Track photographer profile views
+            document.addEventListener('click', function(e) {
+              var link = e.target.closest('a[href*="/photographer/"]');
+              if (link) {
+                gtag('event', 'view_photographer', {
+                  photographer_slug: link.href.split('/photographer/')[1],
+                  page_location: window.location.pathname
+                });
+              }
+            });
+
+            // Track Get Quote button clicks
+            document.addEventListener('click', function(e) {
+              var btn = e.target.closest('button');
+              if (btn && btn.textContent.trim() === 'Get Quote') {
+                gtag('event', 'generate_lead', {
+                  event_category: 'engagement',
+                  event_label: 'get_quote_click',
+                  page_location: window.location.pathname
+                });
+              }
+            });
+
+            // Track external website clicks (photographer websites)
+            document.addEventListener('click', function(e) {
+              var link = e.target.closest('a[target="_blank"]');
+              if (link && link.href && !link.href.includes('boudoirphotographyclub.com')) {
+                gtag('event', 'click_external_website', {
+                  event_category: 'outbound',
+                  event_label: link.href,
+                  page_location: window.location.pathname
+                });
+              }
+            });
+
+            // Track city page views for geo insights
+            if (window.location.pathname.match(/\\/boudoir-photographer\\/[^/]+\\/[^/]+/)) {
+              var parts = window.location.pathname.split('/');
+              gtag('event', 'view_city_page', {
+                state: parts[2],
+                city: parts[3]
+              });
+            }
+
+            // Track search interactions
+            document.addEventListener('submit', function(e) {
+              var form = e.target.closest('form');
+              if (form) {
+                var input = form.querySelector('input[type="text"], input[type="search"]');
+                if (input && input.value) {
+                  gtag('event', 'search', {
+                    search_term: input.value
+                  });
+                }
+              }
+            });
+
+            // Track scroll depth on photographer pages
+            if (window.location.pathname.startsWith('/photographer/')) {
+              var scrollMilestones = [25, 50, 75, 100];
+              var triggered = {};
+              window.addEventListener('scroll', function() {
+                var percent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+                scrollMilestones.forEach(function(m) {
+                  if (percent >= m && !triggered[m]) {
+                    triggered[m] = true;
+                    gtag('event', 'scroll_depth', {
+                      percent_scrolled: m,
+                      page_location: window.location.pathname
+                    });
+                  }
+                });
+              });
+            }
+          `}
+        </Script>
         <link
           href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
