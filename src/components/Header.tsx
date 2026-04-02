@@ -16,7 +16,7 @@ export default function Header() {
               Find Talent
             </Link>
             <Link
-              href="/blog/what-is-boudoir-photography"
+              href="/blog"
               className="font-headline uppercase tracking-widest text-xs text-on-surface opacity-70 hover:opacity-100 transition-opacity duration-300"
             >
               Blog
