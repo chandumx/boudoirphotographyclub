@@ -45,6 +45,9 @@ export const metadata: Metadata = {
     description: "Find the best boudoir photographers near you. Browse portfolios, read reviews, and book your session.",
     images: ["/hero-boudoir.png"],
   },
+  verification: {
+    google: "JWcKAL0x-StvlImnw2pl9LZ5SOq5NwcLPXRlXCJxygI",
+  },
   robots: {
     index: true,
     follow: true,
