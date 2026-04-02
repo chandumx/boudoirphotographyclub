@@ -82,6 +82,27 @@ const columns = [
     },
   },
   {
+    key: "googleMaps",
+    label: "Google Maps",
+    sortable: false,
+    render: (value: unknown) => {
+      const url = String(value || "");
+      if (!url) return <span className="text-on-surface-variant opacity-30">—</span>;
+      return (
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-blue-600 hover:underline text-sm"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <span className="material-symbols-outlined text-sm">map</span>
+          View
+        </a>
+      );
+    },
+  },
+  {
     key: "verified",
     label: "Verified",
     sortable: false,
@@ -104,18 +125,23 @@ function formatCity(slug: string): string {
     .join(" ");
 }
 
-const tableData: Record<string, unknown>[] = photographersData.map((p) => ({
-  name: p.name,
-  slug: p.slug,
-  city: formatCity(p.city),
-  state: p.state,
-  tier: p.tier,
-  rating: p.rating,
-  reviewCount: p.reviewCount,
-  website: (p as Record<string, unknown>).website || null,
-  address: (p as Record<string, unknown>).address || null,
-  verified: p.verified,
-}));
+const tableData: Record<string, unknown>[] = photographersData.map((p) => {
+  const cityName = formatCity(p.city);
+  const query = encodeURIComponent(`${p.name} boudoir photographer ${cityName} ${p.state}`);
+  return {
+    name: p.name,
+    slug: p.slug,
+    city: cityName,
+    state: p.state,
+    tier: p.tier,
+    rating: p.rating,
+    reviewCount: p.reviewCount,
+    website: (p as Record<string, unknown>).website || null,
+    address: (p as Record<string, unknown>).address || null,
+    googleMaps: `https://www.google.com/maps/search/${query}`,
+    verified: p.verified,
+  };
+});
 
 export default function PhotographersPage() {
   const router = useRouter();
