@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: generateStateMetaTitle(stateName),
       description: generateStateMetaDescription(stateName),
       type: "website",
+      images: [{ url: "/hero-boudoir.png", width: 1200, height: 630, alt: `Boudoir Photographers in ${stateName}` }],
     },
   };
 }

@@ -39,6 +39,7 @@ export async function generateMetadata({
       title: `${name} — Boudoir Photographer in ${city}, ${state}`,
       description: photographer?.bio || `Professional boudoir photographer in ${city}, ${state}.`,
       type: "profile",
+      images: photographer?.imageUrl ? [{ url: photographer.imageUrl, alt: `${name} boudoir photographer` }] : [{ url: "/hero-boudoir.png", width: 1200, height: 630 }],
     },
   };
 }

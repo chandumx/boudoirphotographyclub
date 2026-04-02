@@ -46,6 +46,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: `${styleInfo.name} Boudoir Photography in ${cityName}, ${stateName}`,
       description: `Find ${styleInfo.name.toLowerCase()} boudoir photographers in ${cityName}, ${stateName}. Browse verified studios and book today.`,
+      images: [{ url: "/hero-boudoir.png", width: 1200, height: 630, alt: `${styleInfo.name} Boudoir Photography in ${cityName}` }],
     },
   };
 }

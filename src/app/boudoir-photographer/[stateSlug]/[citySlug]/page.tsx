@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: generateCityMetaTitle(cityName, stateName),
       description: generateCityMetaDescription(cityName, stateName),
       type: "website",
+      images: [{ url: "/hero-boudoir.png", width: 1200, height: 630, alt: `Boudoir Photographers in ${cityName}, ${stateName}` }],
     },
   };
 }
