@@ -37,18 +37,20 @@ export default function BlogPage() {
         {blogData.map((post) => (
           <article
             key={post.id}
-            className="bg-surface-container-lowest rounded-sm ring-1 ring-outline-variant/10 overflow-hidden hover:ring-primary/30 transition-all"
+            className="bg-surface-container-lowest rounded-sm ring-1 ring-outline-variant/10 overflow-hidden hover:ring-primary/30 transition-all group"
           >
-            <div className="aspect-video relative bg-surface-container-high">
-              {post.imageUrl && (
-                <Image
-                  src={post.imageUrl}
-                  alt={post.title}
-                  fill
-                  className="object-cover"
-                />
-              )}
-            </div>
+            <Link href={`/blog/${post.slug}`} target="_blank">
+              <div className="aspect-video relative bg-surface-container-high">
+                {post.imageUrl && (
+                  <Image
+                    src={post.imageUrl}
+                    alt={post.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                )}
+              </div>
+            </Link>
             <div className="p-5">
               <div className="flex items-center gap-2 mb-3">
                 <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-tighter bg-primary-container/20 text-primary">
@@ -62,9 +64,11 @@ export default function BlogPage() {
                   {post.status}
                 </span>
               </div>
-              <h2 className="font-headline text-lg text-on-surface mb-2 line-clamp-2">
-                {post.title}
-              </h2>
+              <Link href={`/blog/${post.slug}`} target="_blank">
+                <h2 className="font-headline text-lg text-on-surface mb-2 line-clamp-2 hover:text-primary transition-colors cursor-pointer">
+                  {post.title}
+                </h2>
+              </Link>
               <p className="text-sm text-on-surface-variant opacity-70 mb-4 line-clamp-2">
                 {post.excerpt}
               </p>
@@ -72,17 +76,22 @@ export default function BlogPage() {
                 <p className="text-[10px] font-label uppercase tracking-widest text-on-surface-variant opacity-50">
                   {formatDate(post.createdAt)}
                 </p>
-                <div className="flex items-center gap-1">
-                  <button className="p-1.5 text-on-surface-variant hover:text-primary transition-colors">
-                    <span className="material-symbols-outlined text-sm">
-                      edit
-                    </span>
-                  </button>
-                  <button className="p-1.5 text-on-surface-variant hover:text-red-600 transition-colors">
-                    <span className="material-symbols-outlined text-sm">
-                      delete
-                    </span>
-                  </button>
+                <div className="flex items-center gap-2">
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    target="_blank"
+                    className="p-1.5 text-on-surface-variant hover:text-primary transition-colors"
+                    title="View post"
+                  >
+                    <span className="material-symbols-outlined text-sm">visibility</span>
+                  </Link>
+                  <Link
+                    href={`/admin/blog/new?edit=${post.slug}`}
+                    className="p-1.5 text-on-surface-variant hover:text-primary transition-colors"
+                    title="Edit post"
+                  >
+                    <span className="material-symbols-outlined text-sm">edit</span>
+                  </Link>
                 </div>
               </div>
             </div>
