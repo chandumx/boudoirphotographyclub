@@ -4,6 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import { getPhotographerBySlug, getPhotographerSlugs } from "@/lib/locations";
 import { generateLocalBusinessSchema } from "@/lib/seo";
+import LeadCaptureWidget from "@/components/LeadCaptureWidget";
 import {
   getPhotographerImage,
   getGalleryForPhotographer,
@@ -333,58 +334,15 @@ export default async function PhotographerPage({ params }: PageProps) {
 
           {/* Right: Booking Widget (Sticky) */}
           <div className="lg:col-span-5 lg:sticky lg:top-32">
-            <div className="bg-surface-container-low p-8 rounded-lg shadow-[0_20px_40px_rgba(26,28,26,0.02)]">
-              <h3 className="font-headline text-2xl italic mb-8">
-                Reserve a Consultation
-              </h3>
-
-              <div className="space-y-4 mb-8">
-                {photographer.website && (
-                  <div>
-                    <p className="font-label text-[10px] uppercase tracking-widest text-outline mb-1">
-                      Website
-                    </p>
-                    <a
-                      href={photographer.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-primary hover:text-primary/70 transition-colors break-all"
-                    >
-                      {photographer.website}
-                    </a>
-                  </div>
-                )}
-                {photographer.phone && (
-                  <div>
-                    <p className="font-label text-[10px] uppercase tracking-widest text-outline mb-1">
-                      Phone
-                    </p>
-                    <p className="text-sm text-on-surface">
-                      {photographer.phone}
-                    </p>
-                  </div>
-                )}
-                {photographer.email && (
-                  <div>
-                    <p className="font-label text-[10px] uppercase tracking-widest text-outline mb-1">
-                      Email
-                    </p>
-                    <p className="text-sm text-on-surface">
-                      {photographer.email}
-                    </p>
-                  </div>
-                )}
-              </div>
-
-              <div className="space-y-3">
-                <button className="w-full editorial-gradient text-on-primary font-label text-xs uppercase tracking-widest py-4 rounded-sm hover:opacity-90 transition-opacity">
-                  Request Booking
-                </button>
-                <button className="w-full text-primary font-label text-[10px] uppercase tracking-widest underline underline-offset-8 py-3 hover:opacity-70 transition-opacity">
-                  Contact Photographer
-                </button>
-              </div>
-            </div>
+            <LeadCaptureWidget
+              photographerName={photographer.name}
+              photographerSlug={slug}
+              website={photographer.website}
+              phone={photographer.phone}
+              email={photographer.email}
+              city={cityName}
+              state={stateName}
+            />
 
             {/* Related Info */}
             <div className="mt-8 bg-surface-container-low p-6 rounded-lg">
