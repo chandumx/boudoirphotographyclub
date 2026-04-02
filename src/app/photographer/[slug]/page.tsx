@@ -161,14 +161,14 @@ export default async function PhotographerPage({ params }: PageProps) {
             <div className="overflow-hidden rounded-lg">
               <img
                 src={gallery[1] || gallery[0]}
-                alt={`${photographer.name} portfolio sample`}
+                alt={`${photographer.name} ${photographer.specialties[1] || "intimate"} boudoir photography in ${cityName}`}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div className="overflow-hidden rounded-lg">
               <img
                 src={gallery[2] || gallery[0]}
-                alt={`${photographer.name} portfolio sample`}
+                alt={`${photographer.name} ${photographer.specialties[2] || "professional"} portrait session ${cityName}, ${stateName}`}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>

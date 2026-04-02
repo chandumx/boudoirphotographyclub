@@ -68,6 +68,25 @@ export function generateLocalBusinessSchema(photographer: {
     }),
     ...(photographer.website && { url: photographer.website }),
     ...(photographer.phone && { telephone: photographer.phone }),
+    areaServed: {
+      "@type": "City",
+      name: photographer.city,
+      containedInPlace: {
+        "@type": "State",
+        name: photographer.state,
+      },
+    },
+  };
+}
+
+export function generateCollectionPageSchema(city: string, state: string, count: number) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: `Boudoir Photographers in ${city}, ${state}`,
+    description: `Browse ${count} professional boudoir photographers in ${city}, ${state}. Compare portfolios, read reviews, and book your session.`,
+    url: `https://boudoirphotographyclub.com/boudoir-photographer/${state.toLowerCase().replace(/\s+/g, "-")}/${city.toLowerCase().replace(/\s+/g, "-")}`,
+    numberOfItems: count,
   };
 }
 

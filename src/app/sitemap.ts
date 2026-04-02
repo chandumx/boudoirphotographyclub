@@ -35,6 +35,42 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.5,
     },
+    {
+      url: `${BASE_URL}/boudoir-photographer-near-me`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/about`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly",
+      priority: 0.4,
+    },
+    {
+      url: `${BASE_URL}/contact`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly",
+      priority: 0.4,
+    },
+    {
+      url: `${BASE_URL}/how-it-works`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/privacy`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "yearly",
+      priority: 0.2,
+    },
+    {
+      url: `${BASE_URL}/terms`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "yearly",
+      priority: 0.2,
+    },
   ];
 
   const statePages: MetadataRoute.Sitemap = statesData.map((state) => ({

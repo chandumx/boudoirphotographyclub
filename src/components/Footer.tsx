@@ -95,11 +95,17 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="mt-16 px-12 max-w-[1440px] mx-auto pt-8 border-t border-white/5">
+      <div className="mt-16 px-12 max-w-[1440px] mx-auto pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
         <p className="font-body text-xs tracking-wider uppercase text-[#f5c1c1] opacity-50">
           &copy; {new Date().getFullYear()} Boudoir Photography Club. The Digital
           Atelier for Fine Art Photography.
         </p>
+        <div className="flex gap-6">
+          <Link href="/about" className="font-body text-xs tracking-wider uppercase text-[#faf9f6] opacity-40 hover:opacity-100 duration-300">About</Link>
+          <Link href="/contact" className="font-body text-xs tracking-wider uppercase text-[#faf9f6] opacity-40 hover:opacity-100 duration-300">Contact</Link>
+          <Link href="/privacy" className="font-body text-xs tracking-wider uppercase text-[#faf9f6] opacity-40 hover:opacity-100 duration-300">Privacy</Link>
+          <Link href="/terms" className="font-body text-xs tracking-wider uppercase text-[#faf9f6] opacity-40 hover:opacity-100 duration-300">Terms</Link>
+        </div>
       </div>
     </footer>
   );

@@ -81,7 +81,19 @@
       "Bash(unzip -o gh.zip -d gh_extracted)",
       "Bash(cp /tmp/gh_extracted/bin/gh.exe /c/Users/achandrashekar/AppData/Roaming/npm/gh.exe)",
       "Bash(/c/Users/achandrashekar/AppData/Roaming/npm/gh.exe --version)",
-      "Bash(/c/Users/achandrashekar/AppData/Roaming/npm/gh.exe auth:*)"
+      "Bash(/c/Users/achandrashekar/AppData/Roaming/npm/gh.exe auth:*)",
+      "Bash(vercel --version)",
+      "Bash(vercel whoami:*)",
+      "Bash(vercel --yes --prod)",
+      "Bash(vercel domains:*)",
+      "Bash(xargs grep:*)",
+      "Bash(grep -n \"export const metadata\" /d/photo/src/app/*/page.tsx /d/photo/src/app/*/*/page.tsx)",
+      "Bash(grep -r \"image\\\\|images\\\\|og\\\\|meta\" /d/photo/src/app/*/page.tsx /d/photo/src/app/*/*/page.tsx)",
+      "WebFetch(domain:photo-kappa-two.vercel.app)",
+      "Bash(sed:*)",
+      "Bash(vercel --prod --yes)",
+      "WebFetch(domain:boudoirphotographyclub.com)",
+      "Bash(grep -oP 'google-site-verification.{0,80}')"
     ]
   }
 }

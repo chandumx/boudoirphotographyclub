@@ -75,7 +75,10 @@ export function getStateFAQs(
   }));
 }
 
-export function generateCityMetaTitle(city: string, state: string): string {
+export function generateCityMetaTitle(city: string, state: string, count?: number): string {
+  if (count && count > 0) {
+    return `${count} Best Boudoir Photographers in ${city}, ${state} (2026)`;
+  }
   return `Best Boudoir Photographers in ${city}, ${state} | Boudoir Photography Club`;
 }
 
