@@ -229,5 +229,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...statePages, ...cityPages, ...photographerPages];
+  const styleKeys = ["romantic", "luxury", "bridal", "dark-moody", "fine-art", "glamour", "couples-boudoir", "plus-size", "maternity-boudoir", "women-owned"];
+  const topCitiesForStyles = (citiesData as CityEntry[])
+    .sort((a, b) => b.population - a.population)
+    .slice(0, 50);
+
+  const stylePages: MetadataRoute.Sitemap = [];
+  for (const style of styleKeys) {
+    for (const city of topCitiesForStyles) {
+      const state = statesData.find((s) => s.abbreviation === city.state);
+      if (state) {
+        stylePages.push({
+          url: `${BASE_URL}/boudoir-style/${style}/${state.slug}/${city.slug}`,
+          lastModified: LAST_UPDATED,
+          changeFrequency: "weekly" as const,
+          priority: 0.6,
+        });
+      }
+    }
+  }
+
+  return [...staticPages, ...statePages, ...cityPages, ...photographerPages, ...stylePages];
 }
