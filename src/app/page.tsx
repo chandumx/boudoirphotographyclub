@@ -181,6 +181,82 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Browse by Category */}
+      <section className="py-24 px-8 bg-surface-container-low">
+        <div className="max-w-[1440px] mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="font-headline text-4xl mb-4 italic">
+              Browse by Category
+            </h2>
+            <p className="text-on-surface-variant max-w-lg mx-auto">
+              Find the perfect photographer that matches your values and vision.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Link
+              href="/boudoir-photographers"
+              className="bg-surface-container-lowest rounded-lg p-8 text-center hover:shadow-lg transition-shadow group"
+            >
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-pink-50 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="material-symbols-outlined text-3xl text-pink-600">female</span>
+              </div>
+              <h3 className="font-headline text-lg text-on-surface mb-2">Women-Owned</h3>
+              <p className="text-sm text-on-surface-variant">
+                Studios owned and operated by women. Safe, empowering environments built on understanding.
+              </p>
+              <span className="inline-block mt-4 font-label text-[10px] uppercase tracking-widest text-pink-600">
+                Browse Studios &rarr;
+              </span>
+            </Link>
+            <Link
+              href="/boudoir-photographers"
+              className="bg-surface-container-lowest rounded-lg p-8 text-center hover:shadow-lg transition-shadow group"
+            >
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-blue-50 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="material-symbols-outlined text-3xl text-blue-600">photo_camera</span>
+              </div>
+              <h3 className="font-headline text-lg text-on-surface mb-2">Boudoir Photography</h3>
+              <p className="text-sm text-on-surface-variant">
+                Professional boudoir photographers specializing in intimate, tasteful portraiture.
+              </p>
+              <span className="inline-block mt-4 font-label text-[10px] uppercase tracking-widest text-blue-600">
+                Browse All &rarr;
+              </span>
+            </Link>
+            <Link
+              href="/boudoir-photographers"
+              className="bg-surface-container-lowest rounded-lg p-8 text-center hover:shadow-lg transition-shadow group"
+            >
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-amber-50 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="material-symbols-outlined text-3xl text-amber-600">workspace_premium</span>
+              </div>
+              <h3 className="font-headline text-lg text-on-surface mb-2">Featured Studios</h3>
+              <p className="text-sm text-on-surface-variant">
+                Hand-picked, top-rated studios with exceptional portfolios and client experiences.
+              </p>
+              <span className="inline-block mt-4 font-label text-[10px] uppercase tracking-widest text-amber-600">
+                View Featured &rarr;
+              </span>
+            </Link>
+            <Link
+              href="/boudoir-photographers"
+              className="bg-surface-container-lowest rounded-lg p-8 text-center hover:shadow-lg transition-shadow group"
+            >
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-green-50 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="material-symbols-outlined text-3xl text-green-600">verified</span>
+              </div>
+              <h3 className="font-headline text-lg text-on-surface mb-2">Verified Photographers</h3>
+              <p className="text-sm text-on-surface-variant">
+                Identity and portfolio verified photographers you can trust with confidence.
+              </p>
+              <span className="inline-block mt-4 font-label text-[10px] uppercase tracking-widest text-green-600">
+                View Verified &rarr;
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Popular Locations */}
       <section className="bg-surface-container py-24 px-8 overflow-hidden">
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
