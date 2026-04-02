@@ -23,22 +23,12 @@ export default function Header() {
             </Link>
           </div>
         </div>
-        <div className="flex items-center space-x-6">
-          <Link
-            href="/submit"
-            className="hidden md:block editorial-gradient text-on-primary px-5 py-2.5 rounded-sm font-label text-xs uppercase tracking-wider hover:opacity-90 transition-opacity"
-          >
-            List Your Studio
-          </Link>
-          <div className="flex items-center space-x-4">
-            <span className="material-symbols-outlined text-on-surface opacity-70 cursor-pointer hover:opacity-100 transition-opacity">
-              favorite
-            </span>
-            <span className="material-symbols-outlined text-on-surface opacity-70 cursor-pointer hover:opacity-100 transition-opacity">
-              account_circle
-            </span>
-          </div>
-        </div>
+        <Link
+          href="/submit"
+          className="editorial-gradient text-on-primary px-5 py-2.5 rounded-sm font-label text-xs uppercase tracking-wider hover:opacity-90 transition-opacity"
+        >
+          List Your Studio — Free
+        </Link>
       </div>
     </nav>
   );
