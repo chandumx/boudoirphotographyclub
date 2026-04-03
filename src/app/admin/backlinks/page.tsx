@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import outreachData from "@/data/backlink-outreach.json";
 
 interface OutreachRecord {
   id: string;
@@ -42,20 +43,12 @@ export default function BacklinksPage() {
   const [emailTemplate, setEmailTemplate] = useState({ subject: "", body: "" });
   const [verifying, setVerifying] = useState<string | null>(null);
 
-  const fetchRecords = useCallback(async () => {
-    const res = await fetch("/api/backlinks");
-    const data = await res.json();
-    setRecords(Array.isArray(data) ? data : []);
+  const fetchRecords = useCallback(() => {
+    setRecords(outreachData as unknown as OutreachRecord[]);
     setLoading(false);
   }, []);
 
   useEffect(() => { fetchRecords(); }, [fetchRecords]);
-
-  const generateList = async () => {
-    setLoading(true);
-    await fetch("/api/backlinks?action=generate");
-    await fetchRecords();
-  };
 
   const openEmailModal = async (record: OutreachRecord) => {
     const res = await fetch(
@@ -142,13 +135,9 @@ export default function BacklinksPage() {
             {stats.total} photographers · {stats.backlinksFound} backlinks acquired
           </p>
         </div>
-        <button
-          onClick={generateList}
-          className="inline-flex items-center gap-2 px-5 py-2.5 editorial-gradient text-on-primary rounded-sm text-xs font-label uppercase tracking-widest hover:opacity-90"
-        >
-          <span className="material-symbols-outlined text-sm">sync</span>
-          Generate Outreach List
-        </button>
+        <span className="px-4 py-2 bg-green-50 text-green-700 rounded-full text-xs font-medium">
+          {records.length} photographers loaded
+        </span>
       </div>
 
       {/* Stats Cards */}
