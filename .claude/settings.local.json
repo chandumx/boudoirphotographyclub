@@ -103,7 +103,9 @@
       "Bash(node scripts/add-city-photographers.js)",
       "Bash([ -f \"D:/photo/src/app/blog/$d/page.tsx\" ])",
       "Bash(ls src/app/blog/*/page.tsx)",
-      "Bash(grep -v \"//\")"
+      "Bash(grep -v \"//\")",
+      "WebFetch(domain:www.evgeniaribinik.com)",
+      "Bash(node scripts/send-outreach.js)"
     ]
   }
 }
