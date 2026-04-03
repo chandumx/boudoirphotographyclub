@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import JsonLd from "@/components/JsonLd";
+import { generateCollectionPageSchema } from "@/lib/seo";
 import photographersData from "@/data/photographers.json";
 import citiesData from "@/data/cities.json";
 import statesData from "@/data/states.json";
@@ -106,6 +108,7 @@ export default async function StyleCityPage({ params }: PageProps) {
   return (
     <div className="bg-surface text-on-surface">
       <div className="max-w-[1200px] mx-auto px-6 sm:px-10 py-12">
+        <JsonLd data={generateCollectionPageSchema(cityName, stateName, cityPhotographers.length)} />
         <Breadcrumbs
           items={[
             { name: "Boudoir Photographers", url: "/boudoir-photographers" },

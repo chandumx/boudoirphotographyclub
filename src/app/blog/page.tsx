@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import JsonLd from "@/components/JsonLd";
+import { generateArticleSchema } from "@/lib/seo";
 import blogData from "@/data/blog.json";
 
 export const metadata: Metadata = {
@@ -32,8 +34,30 @@ export default function BlogIndexPage() {
     p.slug.startsWith("best-boudoir-photographer-")
   );
 
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Boudoir Photography Blog Articles",
+    description: "Expert boudoir photography guides, tips, and inspiration.",
+    numberOfItems: blogData.length,
+    itemListElement: blogData.map((post, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      url: `https://boudoirphotographyclub.com/blog/${post.slug}`,
+      name: post.title,
+      item: generateArticleSchema({
+        title: post.title,
+        description: post.excerpt,
+        url: `https://boudoirphotographyclub.com/blog/${post.slug}`,
+        datePublished: post.createdAt,
+        image: post.imageUrl ? `https://boudoirphotographyclub.com${post.imageUrl}` : undefined,
+      }),
+    })),
+  };
+
   return (
     <div className="bg-surface text-on-surface">
+      <JsonLd data={itemListSchema} />
       <div className="max-w-[1200px] mx-auto px-6 sm:px-10 py-16">
         <div className="text-center mb-16">
           <h1 className="font-headline text-4xl md:text-5xl italic text-on-surface mb-4">

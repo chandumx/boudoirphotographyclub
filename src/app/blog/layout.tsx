@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import BlogRelatedWrapper from "@/components/BlogRelatedWrapper";
 
 export const metadata: Metadata = {
   openGraph: {
@@ -9,5 +10,12 @@ export const metadata: Metadata = {
 };
 
 export default function BlogLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      {children}
+      <div className="max-w-[800px] mx-auto px-6 sm:px-10 pb-16">
+        <BlogRelatedWrapper />
+      </div>
+    </>
+  );
 }

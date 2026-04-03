@@ -4,7 +4,7 @@ import citiesData from "@/data/cities.json";
 import photographersData from "@/data/photographers.json";
 
 const BASE_URL = "https://boudoirphotographyclub.com";
-const LAST_UPDATED = new Date("2026-04-02");
+const LAST_UPDATED = new Date("2026-04-04");
 
 interface CityEntry {
   name: string;

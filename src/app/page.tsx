@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import SearchBar from "@/components/SearchBar";
 import JsonLd from "@/components/JsonLd";
 import { generateWebsiteSchema, generateFAQSchema, generateOrganizationSchema } from "@/lib/seo";
@@ -130,11 +131,14 @@ export default function HomePage() {
             </div>
           </div>
           <div className="lg:col-span-5 relative mt-12 lg:mt-0">
-            <div className="aspect-[4/5] rounded-lg overflow-hidden">
-              <img
+            <div className="aspect-[4/5] rounded-lg overflow-hidden relative">
+              <Image
                 src={heroImage}
                 alt="Elegant boudoir portrait photography"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                priority
               />
             </div>
             <div className="absolute -bottom-8 -left-8 bg-surface-container-low p-6 rounded-lg hidden md:block max-w-[200px] shadow-sm">
@@ -167,10 +171,13 @@ export default function HomePage() {
               href="/boudoir-photographers"
               className="relative aspect-[4/5] rounded-lg overflow-hidden group"
             >
-              <img
+              <Image
                 src={styleImages[style.slug]}
                 alt={`${style.name} boudoir photography style`}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-end p-4">
                 <span className="text-white font-label text-[10px] uppercase tracking-[0.2em]">
@@ -331,11 +338,14 @@ export default function HomePage() {
                 &ldquo;{t.quote}&rdquo;
               </p>
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-primary-container overflow-hidden">
-                  <img
+                <div className="w-10 h-10 rounded-full bg-primary-container overflow-hidden relative">
+                  <Image
                     src={testimonialAvatars[idx]}
                     alt={t.name}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
+                    sizes="40px"
+                    loading="lazy"
                   />
                 </div>
                 <div>
@@ -364,11 +374,14 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {blogPosts.map((post, idx) => (
               <article key={post.title} className="group cursor-pointer">
-                <div className="aspect-video overflow-hidden rounded-lg mb-6">
-                  <img
+                <div className="aspect-video overflow-hidden rounded-lg mb-6 relative">
+                  <Image
                     src={blogImages[idx]}
                     alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    loading="lazy"
                   />
                 </div>
                 <span className="font-label text-[10px] uppercase tracking-widest text-primary mb-2 block">

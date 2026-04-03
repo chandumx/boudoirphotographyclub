@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import { getPhotographerBySlug, getPhotographerSlugs } from "@/lib/locations";
@@ -126,10 +127,13 @@ export default async function PhotographerPage({ params }: PageProps) {
         {/* Hero Section */}
         <section className="mt-10 mb-16">
           <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] overflow-hidden rounded-lg">
-            <img
+            <Image
               src={heroImg}
               alt={`${photographer.name} — ${photographer.specialties[0] || "Boudoir"} Photography in ${cityName}`}
-              className="w-full h-full object-cover object-center"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1440px) 100vw, 1440px"
+              priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 right-6">
@@ -304,12 +308,15 @@ export default async function PhotographerPage({ params }: PageProps) {
                 {gallery.map((img, idx) => (
                   <div
                     key={idx}
-                    className="overflow-hidden rounded-lg group/img aspect-[3/4]"
+                    className="overflow-hidden rounded-lg group/img aspect-[3/4] relative"
                   >
-                    <img
+                    <Image
                       src={img}
                       alt={`${photographer.name} portfolio — ${photographer.specialties[idx] || "boudoir photography"} sample ${idx + 1}`}
-                      className="w-full h-full object-cover object-center transition-transform duration-700 group-hover/img:scale-105"
+                      fill
+                      className="object-cover object-center transition-transform duration-700 group-hover/img:scale-105"
+                      sizes="(max-width: 768px) 50vw, 33vw"
+                      loading="lazy"
                     />
                   </div>
                 ))}
