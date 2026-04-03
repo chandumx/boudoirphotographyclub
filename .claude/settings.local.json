@@ -101,7 +101,9 @@
       "Bash(node scripts/fetch-gmaps-images.js)",
       "Bash(node scripts/fetch-gmaps-v2.js)",
       "Bash(node scripts/add-city-photographers.js)",
-      "Bash([ -f \"D:/photo/src/app/blog/$d/page.tsx\" ])"
+      "Bash([ -f \"D:/photo/src/app/blog/$d/page.tsx\" ])",
+      "Bash(ls src/app/blog/*/page.tsx)",
+      "Bash(grep -v \"//\")"
     ]
   }
 }

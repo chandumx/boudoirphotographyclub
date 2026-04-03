@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "id": "placeholder",
+    "name": "System Test",
+    "email": "test@system.com",
+    "phone": "0000000000",
+    "photographer": "",
+    "photographerSlug": "",
+    "photographerName": "",
+    "message": "",
+    "city": "",
+    "state": "",
+    "status": "new",
+    "createdAt": "2026-04-02T00:00:00Z"
+  }
+]

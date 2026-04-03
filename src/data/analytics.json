@@ -1,8 +1,22 @@
 {
-  "daily": [],
-  "topPages": [],
-  "topCities": [],
-  "topSources": [],
+  "daily": [
+    { "date": "2026-04-02", "visitors": 0, "pageViews": 0, "leads": 0, "avgDuration": "0:00" }
+  ],
+  "topPages": [
+    { "page": "/", "views": 0, "uniqueVisitors": 0 }
+  ],
+  "topCities": [
+    { "city": "N/A", "state": "", "views": 0, "leads": 0 }
+  ],
+  "topSources": [
+    { "source": "Direct", "visitors": 0, "percentage": "0%" }
+  ],
+  "trafficSources": [
+    { "source": "Direct", "sessions": 0, "percentage": 0 }
+  ],
+  "topPhotographers": [
+    { "name": "N/A", "views": 0, "leads": 0 }
+  ],
   "summary": {
     "totalVisitors": 0,
     "totalPageViews": 0,
