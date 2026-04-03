@@ -11,6 +11,7 @@ const navItems = [
   { label: "Content", href: "/admin/content", icon: "article" },
   { label: "Blog", href: "/admin/blog", icon: "edit_note" },
   { label: "Images", href: "/admin/images", icon: "image" },
+  { label: "Backlinks", href: "/admin/backlinks", icon: "link" },
   { label: "Analytics", href: "/admin/analytics", icon: "insights" },
 ];
 
