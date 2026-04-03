@@ -1,7 +1,7 @@
 import Link from "next/link";
 import SearchBar from "@/components/SearchBar";
 import JsonLd from "@/components/JsonLd";
-import { generateWebsiteSchema, generateFAQSchema } from "@/lib/seo";
+import { generateWebsiteSchema, generateFAQSchema, generateOrganizationSchema } from "@/lib/seo";
 import {
   heroImage,
   styleImages,
@@ -103,6 +103,7 @@ export default function HomePage() {
       <JsonLd data={generateWebsiteSchema()} />
       <JsonLd data={generateFAQSchema(homeFAQs)} />
       <JsonLd data={directoryRatingSchema} />
+      <JsonLd data={generateOrganizationSchema()} />
 
       {/* Hero Section */}
       <section className="relative px-8 py-20 overflow-hidden max-w-[1440px] mx-auto">

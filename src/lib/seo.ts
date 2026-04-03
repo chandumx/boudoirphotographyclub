@@ -136,3 +136,58 @@ export function generateVideoSchema(video: {
     },
   };
 }
+
+export function generateOrganizationSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Boudoir Photography Club",
+    url: "https://boudoirphotographyclub.com",
+    logo: "https://boudoirphotographyclub.com/hero-boudoir.png",
+    description: "The premier directory connecting clients with professional boudoir photographers across all 50 US states.",
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: "hello@boudoirphotographyclub.com",
+      contactType: "customer service",
+    },
+    sameAs: [],
+  };
+}
+
+export function generateArticleSchema(article: {
+  title: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified?: string;
+  image?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.description,
+    url: article.url,
+    datePublished: article.datePublished,
+    dateModified: article.dateModified || article.datePublished,
+    image: article.image || "https://boudoirphotographyclub.com/hero-boudoir.png",
+    author: {
+      "@type": "Organization",
+      name: "Boudoir Photography Club",
+      url: "https://boudoirphotographyclub.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Boudoir Photography Club",
+      url: "https://boudoirphotographyclub.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://boudoirphotographyclub.com/hero-boudoir.png",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": article.url,
+    },
+  };
+}

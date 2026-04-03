@@ -212,15 +212,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  const cityPages: MetadataRoute.Sitemap = (citiesData as CityEntry[]).map((city) => {
-    const state = statesData.find((s) => s.abbreviation === city.state);
-    return {
-      url: `${BASE_URL}/boudoir-photographer/${state?.slug || ""}/${city.slug}`,
-      lastModified: LAST_UPDATED,
-      changeFrequency: "weekly" as const,
-      priority: 0.7,
-    };
-  });
+  const cityPages: MetadataRoute.Sitemap = (citiesData as CityEntry[])
+    .filter((city) => statesData.some((s) => s.abbreviation === city.state))
+    .map((city) => {
+      const state = statesData.find((s) => s.abbreviation === city.state)!;
+      return {
+        url: `${BASE_URL}/boudoir-photographer/${state.slug}/${city.slug}`,
+        lastModified: LAST_UPDATED,
+        changeFrequency: "weekly" as const,
+        priority: 0.7,
+      };
+    });
 
   const photographerPages: MetadataRoute.Sitemap = photographersData.map((p) => ({
     url: `${BASE_URL}/photographer/${p.slug}`,
