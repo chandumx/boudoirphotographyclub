@@ -3,7 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 import PublicLayout from "@/components/PublicLayout";
 
-const GA_ID = "G-B848QX8EF4";
+const GA_ID = "G-P3QPT99D9M";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://boudoirphotographyclub.com"),
