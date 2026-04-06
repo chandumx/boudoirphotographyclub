@@ -341,6 +341,29 @@ export default function WhatIsBoudoirPhotographyPage() {
             Find a Photographer Near You
           </Link>
         </section>
+
+        {/* Related Articles */}
+        <aside className="mt-16 pt-12 border-t border-outline-variant/30">
+          <h2 className="font-headline text-2xl mb-6">Related Articles</h2>
+          <div className="grid sm:grid-cols-2 gap-6">
+            <Link href="/blog/boudoir-photography-styles-types-genres" className="group block p-6 bg-surface-container-lowest rounded-2xl hover:bg-surface-container-low transition-colors">
+              <h3 className="font-headline text-lg mb-2 group-hover:text-primary transition-colors">Boudoir Photography Styles, Types &amp; Genres</h3>
+              <p className="text-on-surface-variant text-sm">Explore every boudoir style from classic and fine art to moody, editorial, and couples.</p>
+            </Link>
+            <Link href="/blog/boudoir-photography-trends-2026" className="group block p-6 bg-surface-container-lowest rounded-2xl hover:bg-surface-container-low transition-colors">
+              <h3 className="font-headline text-lg mb-2 group-hover:text-primary transition-colors">Boudoir Photography Trends 2026</h3>
+              <p className="text-on-surface-variant text-sm">The biggest trends shaping boudoir photography this year.</p>
+            </Link>
+            <Link href="/blog/how-much-does-boudoir-photography-cost" className="group block p-6 bg-surface-container-lowest rounded-2xl hover:bg-surface-container-low transition-colors">
+              <h3 className="font-headline text-lg mb-2 group-hover:text-primary transition-colors">Boudoir Photography Pricing Guide</h3>
+              <p className="text-on-surface-variant text-sm">Costs by city, package breakdowns, and tips to save money.</p>
+            </Link>
+            <Link href="/blog/boudoir-photography-tips" className="group block p-6 bg-surface-container-lowest rounded-2xl hover:bg-surface-container-low transition-colors">
+              <h3 className="font-headline text-lg mb-2 group-hover:text-primary transition-colors">Boudoir Photography Tips for First Timers</h3>
+              <p className="text-on-surface-variant text-sm">How to prepare mentally and physically for your session.</p>
+            </Link>
+          </div>
+        </aside>
       </article>
     </div>
   );

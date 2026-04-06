@@ -239,6 +239,29 @@ export default function DenverBoudoirGuidePage() {
             Find Denver Boudoir Photographers
           </Link>
         </section>
+
+        {/* Related City Guides */}
+        <aside className="mt-16 pt-12 border-t border-outline-variant/30">
+          <h2 className="font-headline text-2xl mb-6">Explore Other Cities</h2>
+          <div className="grid sm:grid-cols-2 gap-6">
+            <Link href="/blog/best-boudoir-photographer-austin" className="group block p-6 bg-surface-container-lowest rounded-2xl hover:bg-surface-container-low transition-colors">
+              <h3 className="font-headline text-lg mb-2 group-hover:text-primary transition-colors">Best Boudoir Photographers in Austin</h3>
+              <p className="text-on-surface-variant text-sm">SoCo, East Austin, and Hill Country studio options.</p>
+            </Link>
+            <Link href="/blog/best-boudoir-photographer-dallas" className="group block p-6 bg-surface-container-lowest rounded-2xl hover:bg-surface-container-low transition-colors">
+              <h3 className="font-headline text-lg mb-2 group-hover:text-primary transition-colors">Best Boudoir Photographers in Dallas</h3>
+              <p className="text-on-surface-variant text-sm">Uptown, Deep Ellum, and Design District studios.</p>
+            </Link>
+            <Link href="/blog/best-boudoir-photographer-las-vegas" className="group block p-6 bg-surface-container-lowest rounded-2xl hover:bg-surface-container-low transition-colors">
+              <h3 className="font-headline text-lg mb-2 group-hover:text-primary transition-colors">Best Boudoir Photographers in Las Vegas</h3>
+              <p className="text-on-surface-variant text-sm">Strip, Downtown, and Summerlin studio guide.</p>
+            </Link>
+            <Link href="/blog/best-boudoir-photographer-phoenix" className="group block p-6 bg-surface-container-lowest rounded-2xl hover:bg-surface-container-low transition-colors">
+              <h3 className="font-headline text-lg mb-2 group-hover:text-primary transition-colors">Best Boudoir Photographers in Phoenix</h3>
+              <p className="text-on-surface-variant text-sm">Scottsdale, Tempe, and desert boudoir sessions.</p>
+            </Link>
+          </div>
+        </aside>
       </article>
     </div>
   );

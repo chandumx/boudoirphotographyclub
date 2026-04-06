@@ -373,6 +373,26 @@ export default async function PhotographerPage({ params }: PageProps) {
               state={stateName}
             />
 
+            {/* Edit Listing */}
+            <div className="mt-8 bg-primary/5 border border-primary/10 p-6 rounded-lg">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="material-symbols-outlined text-primary text-lg">edit</span>
+                <h4 className="font-label text-[10px] uppercase tracking-widest text-primary">
+                  Is this your listing?
+                </h4>
+              </div>
+              <p className="text-xs text-on-surface-variant mb-4 leading-relaxed">
+                Update your name, description, style, budget, and images anytime using your private edit link.
+              </p>
+              <a
+                href="mailto:hello@boudoirphotographyclub.com?subject=Edit%20Link%20Request%20-%20{photographer.name}&body=Hi%2C%20I%27d%20like%20to%20edit%20my%20listing.%20My%20profile%20URL%20is%3A%20https%3A%2F%2Fboudoirphotographyclub.com%2Fphotographer%2F{slug}"
+                className="inline-flex items-center gap-2 font-label text-xs uppercase tracking-widest text-primary hover:opacity-70 transition-opacity"
+              >
+                <span className="material-symbols-outlined text-sm">mail</span>
+                Request Your Edit Link
+              </a>
+            </div>
+
             {/* Related Info */}
             <div className="mt-8 bg-surface-container-low p-6 rounded-lg">
               <h4 className="font-label text-[10px] uppercase tracking-widest text-outline mb-4">

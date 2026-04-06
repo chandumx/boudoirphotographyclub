@@ -502,5 +502,41 @@
     "metaDescription": "Holiday Boudoir Gift Guide 2026 guide with expert tips and recommendations.",
     "createdAt": "2026-04-03T30:00:00Z",
     "imageUrl": "/style-bridal.png"
+  },
+  {
+    "id": "43",
+    "title": "Boudoir Photography Styles, Types & Genres: Complete Guide",
+    "slug": "boudoir-photography-styles-types-genres",
+    "excerpt": "Explore every boudoir photography style from classic and fine art to moody, editorial, bridal, maternity, and couples boudoir.",
+    "category": "Guide",
+    "status": "published",
+    "metaTitle": "Boudoir Photography Styles, Types & Genres (2026 Guide)",
+    "metaDescription": "Complete guide to boudoir photography styles including classic, fine art, luxury, moody, editorial, bridal, maternity, and couples boudoir.",
+    "createdAt": "2026-04-06T10:00:00Z",
+    "imageUrl": "/style-fine-art.png"
+  },
+  {
+    "id": "44",
+    "title": "Boudoir Photography Trends 2026: What's Hot This Year",
+    "slug": "boudoir-photography-trends-2026",
+    "excerpt": "The biggest boudoir photography trends for 2026 including natural aesthetics, outdoor sessions, inclusive representation, and more.",
+    "category": "Trends",
+    "status": "published",
+    "metaTitle": "Boudoir Photography Trends 2026: What's Hot This Year",
+    "metaDescription": "Discover the top boudoir photography trends for 2026 from natural aesthetics to outdoor sessions and inclusive representation.",
+    "createdAt": "2026-04-06T11:00:00Z",
+    "imageUrl": "/style-dark-moody.png"
+  },
+  {
+    "id": "45",
+    "title": "Best Boudoir Photographers in Austin TX",
+    "slug": "best-boudoir-photographer-austin",
+    "excerpt": "Austin boudoir guide with SoCo, East Austin, and Hill Country studio options, pricing, and booking tips.",
+    "category": "City Guide",
+    "status": "published",
+    "metaTitle": "Best Boudoir Photographers in Austin TX (2026 Guide)",
+    "metaDescription": "Find the best boudoir photographers in Austin TX with pricing from $350-$2000+, top studio areas, and booking tips.",
+    "createdAt": "2026-04-06T12:00:00Z",
+    "imageUrl": "/style-glamour.png"
   }
 ]

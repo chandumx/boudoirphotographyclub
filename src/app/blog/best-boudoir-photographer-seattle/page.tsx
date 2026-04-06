@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     "seattle intimate photography",
     "boudoir photography pricing seattle",
   ],
+  alternates: {
+    canonical: "https://boudoirphotographyclub.com/blog/best-boudoir-photographer-seattle",
+  },
 };
 
 export default function SeattleBoudoirGuidePage() {

@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     "boudoir shoot checklist",
     "first boudoir shoot advice",
   ],
+  alternates: {
+    canonical: "https://boudoirphotographyclub.com/blog/boudoir-photography-tips",
+  },
 };
 
 export default function BoudoirPhotographyTipsPage() {
@@ -550,6 +553,29 @@ export default function BoudoirPhotographyTipsPage() {
             Find a Boudoir Photographer
           </Link>
         </div>
+
+        {/* Related Articles */}
+        <aside className="mt-16 pt-12 border-t border-outline-variant/30">
+          <h2 className="font-headline text-2xl mb-6">Related Articles</h2>
+          <div className="grid sm:grid-cols-2 gap-6">
+            <Link href="/blog/what-is-boudoir-photography" className="group block p-6 bg-surface-container-lowest rounded-2xl hover:bg-surface-container-low transition-colors">
+              <h3 className="font-headline text-lg mb-2 group-hover:text-primary transition-colors">What Is Boudoir Photography?</h3>
+              <p className="text-on-surface-variant text-sm">Complete guide to styles, what to expect, and how to prepare.</p>
+            </Link>
+            <Link href="/blog/boudoir-photography-trends-2026" className="group block p-6 bg-surface-container-lowest rounded-2xl hover:bg-surface-container-low transition-colors">
+              <h3 className="font-headline text-lg mb-2 group-hover:text-primary transition-colors">Boudoir Photography Trends 2026</h3>
+              <p className="text-on-surface-variant text-sm">The biggest trends shaping boudoir this year.</p>
+            </Link>
+            <Link href="/blog/how-much-does-boudoir-photography-cost" className="group block p-6 bg-surface-container-lowest rounded-2xl hover:bg-surface-container-low transition-colors">
+              <h3 className="font-headline text-lg mb-2 group-hover:text-primary transition-colors">Boudoir Photography Pricing Guide</h3>
+              <p className="text-on-surface-variant text-sm">Costs by city, package breakdowns, and budget tips.</p>
+            </Link>
+            <Link href="/blog/boudoir-photography-poses" className="group block p-6 bg-surface-container-lowest rounded-2xl hover:bg-surface-container-low transition-colors">
+              <h3 className="font-headline text-lg mb-2 group-hover:text-primary transition-colors">30 Best Boudoir Poses</h3>
+              <p className="text-on-surface-variant text-sm">Flattering poses for every body type with beginner tips.</p>
+            </Link>
+          </div>
+        </aside>
       </article>
     </div>
   );

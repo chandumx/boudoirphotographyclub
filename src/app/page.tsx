@@ -45,6 +45,9 @@ const featuredCities = [
   { name: "Denver", state: "Colorado", stateSlug: "colorado", slug: "denver" },
   { name: "San Diego", state: "California", stateSlug: "california", slug: "san-diego" },
   { name: "Phoenix", state: "Arizona", stateSlug: "arizona", slug: "phoenix" },
+  { name: "Austin", state: "Texas", stateSlug: "texas", slug: "austin" },
+  { name: "Portland", state: "Oregon", stateSlug: "oregon", slug: "portland" },
+  { name: "Seattle", state: "Washington", stateSlug: "washington", slug: "seattle" },
 ];
 
 const styles = [

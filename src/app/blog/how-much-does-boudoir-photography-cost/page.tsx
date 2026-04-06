@@ -457,6 +457,29 @@ export default function HowMuchDoesBoudoirCostPage() {
             Browse Photographers Near You
           </Link>
         </section>
+
+        {/* Related Articles */}
+        <aside className="mt-16 pt-12 border-t border-outline-variant/30">
+          <h2 className="font-headline text-2xl mb-6">Related Articles</h2>
+          <div className="grid sm:grid-cols-2 gap-6">
+            <Link href="/blog/what-is-boudoir-photography" className="group block p-6 bg-surface-container-lowest rounded-2xl hover:bg-surface-container-low transition-colors">
+              <h3 className="font-headline text-lg mb-2 group-hover:text-primary transition-colors">What Is Boudoir Photography?</h3>
+              <p className="text-on-surface-variant text-sm">Complete guide to styles, what to expect, and how to prepare.</p>
+            </Link>
+            <Link href="/blog/boudoir-photography-styles-types-genres" className="group block p-6 bg-surface-container-lowest rounded-2xl hover:bg-surface-container-low transition-colors">
+              <h3 className="font-headline text-lg mb-2 group-hover:text-primary transition-colors">Boudoir Photography Styles &amp; Genres</h3>
+              <p className="text-on-surface-variant text-sm">Explore every style from classic to editorial, fine art, and moody.</p>
+            </Link>
+            <Link href="/blog/boudoir-photography-tips" className="group block p-6 bg-surface-container-lowest rounded-2xl hover:bg-surface-container-low transition-colors">
+              <h3 className="font-headline text-lg mb-2 group-hover:text-primary transition-colors">Tips for First Timers</h3>
+              <p className="text-on-surface-variant text-sm">How to prepare and feel your best for your boudoir session.</p>
+            </Link>
+            <Link href="/blog/what-to-wear-to-boudoir-shoot" className="group block p-6 bg-surface-container-lowest rounded-2xl hover:bg-surface-container-low transition-colors">
+              <h3 className="font-headline text-lg mb-2 group-hover:text-primary transition-colors">What to Wear to a Boudoir Shoot</h3>
+              <p className="text-on-surface-variant text-sm">20 outfit ideas from lingerie to casual looks for every body type.</p>
+            </Link>
+          </div>
+        </aside>
       </article>
     </div>
   );
