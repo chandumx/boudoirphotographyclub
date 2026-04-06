@@ -11,6 +11,9 @@ import {
   getGalleryForPhotographer,
 } from "@/data/images";
 
+// Revalidate every 60 seconds so Blob overrides appear quickly
+export const revalidate = 60;
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }

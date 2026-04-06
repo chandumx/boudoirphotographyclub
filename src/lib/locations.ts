@@ -203,19 +203,32 @@ export async function getPhotographerBySlug(
   );
   if (!city) return null;
 
+  // Apply Blob overrides if available
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let override: any = null;
+  try {
+    const { getOverride } = await import("@/lib/photographer-store");
+    override = await getOverride(slug);
+  } catch {
+    // Blob not available (e.g. build time), use base data
+  }
+
+  const name = (override?.name as string) || p.name;
+  const tier = ((override?.tier as string) || p.tier) as "FEATURED" | "PRO" | "FREE";
+
   return {
     id: p.slug,
-    name: p.name,
+    name,
     slug: p.slug,
     email: null,
     phone: null,
-    website: p.website,
-    imageUrl: p.imageUrl,
-    gallery: p.gallery || [],
-    bio: p.bio,
-    specialties: p.specialties,
-    tier: p.tier,
-    featured: p.tier === "FEATURED",
+    website: (override?.website as string) || p.website,
+    imageUrl: (override?.imageUrl as string) || p.imageUrl,
+    gallery: (override?.gallery as string[]) || p.gallery || [],
+    bio: (override?.bio as string) || p.bio,
+    specialties: (override?.specialties as string[]) || p.specialties,
+    tier,
+    featured: tier === "FEATURED",
     verified: p.verified,
     rating: p.rating,
     reviewCount: p.reviewCount,

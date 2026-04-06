@@ -1,23 +1,21 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import photographersData from "@/data/photographers.json";
+import {
+  getOverride,
+  saveOverride,
+  getPhotographerWithOverrides,
+} from "@/lib/photographer-store";
 
-const DATA_PATH = path.join(process.cwd(), "src/data/photographers.json");
+interface PhotographerBase {
+  slug: string;
+  editToken?: string;
+  [key: string]: unknown;
+}
 
 function isAdmin(request: NextRequest) {
   return request.cookies.get("admin_session")?.value === "authenticated";
 }
 
-function loadPhotographers() {
-  const raw = fs.readFileSync(DATA_PATH, "utf-8");
-  return JSON.parse(raw);
-}
-
-function savePhotographers(data: unknown[]) {
-  fs.writeFileSync(DATA_PATH, JSON.stringify(data, null, 2));
-}
-
-// GET: load photographer data by slug (admin-only, no token needed)
 export async function GET(request: NextRequest) {
   if (!isAdmin(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -30,11 +28,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Missing slug" }, { status: 400 });
   }
 
-  const photographers = loadPhotographers();
-  const photographer = photographers.find(
-    (p: { slug: string }) => p.slug === slug
-  );
-
+  const photographer = await getPhotographerWithOverrides(slug);
   if (!photographer) {
     return NextResponse.json(
       { error: "Photographer not found" },
@@ -45,7 +39,6 @@ export async function GET(request: NextRequest) {
   return NextResponse.json({ photographer });
 }
 
-// POST: save photographer data (admin-only, no token needed)
 export async function POST(request: NextRequest) {
   if (!isAdmin(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -53,45 +46,37 @@ export async function POST(request: NextRequest) {
 
   try {
     const body = await request.json();
-    const {
-      slug,
-      name,
-      bio,
-      specialties,
-      style,
-      tier,
-      website,
-      imageUrl,
-      gallery,
-    } = body;
+    const { slug, name, bio, specialties, style, tier, website, imageUrl, gallery } = body;
 
     if (!slug) {
       return NextResponse.json({ error: "Missing slug" }, { status: 400 });
     }
 
-    const photographers = loadPhotographers();
-    const index = photographers.findIndex(
-      (p: { slug: string }) => p.slug === slug
+    // Verify photographer exists in base data
+    const base = (photographersData as PhotographerBase[]).find(
+      (p) => p.slug === slug
     );
-
-    if (index === -1) {
+    if (!base) {
       return NextResponse.json(
         { error: "Photographer not found" },
         { status: 404 }
       );
     }
 
-    const photographer = photographers[index];
+    // Load existing override or create new
+    const existing: import("@/lib/photographer-store").PhotographerOverride =
+      (await getOverride(slug)) || { slug, updatedAt: "" };
 
-    if (name !== undefined) photographer.name = name;
-    if (bio !== undefined) photographer.bio = bio;
-    if (website !== undefined) photographer.website = website;
-    if (imageUrl !== undefined) photographer.imageUrl = imageUrl;
-    if (gallery !== undefined) photographer.gallery = gallery;
+    // Apply changes
+    if (name !== undefined) existing.name = name;
+    if (bio !== undefined) existing.bio = bio;
+    if (website !== undefined) existing.website = website;
+    if (imageUrl !== undefined) existing.imageUrl = imageUrl;
+    if (gallery !== undefined) existing.gallery = gallery;
 
     if (tier !== undefined) {
       const validTiers = ["FREE", "PRO", "FEATURED"];
-      if (validTiers.includes(tier)) photographer.tier = tier;
+      if (validTiers.includes(tier)) existing.tier = tier;
     }
 
     if (specialties !== undefined) {
@@ -103,21 +88,24 @@ export async function POST(request: NextRequest) {
             .filter(Boolean);
       if (style && parsed[0] !== style) {
         const filtered = parsed.filter((s: string) => s !== style);
-        photographer.specialties = [style, ...filtered];
+        existing.specialties = [style, ...filtered];
       } else {
-        photographer.specialties = parsed;
+        existing.specialties = parsed;
       }
     } else if (style !== undefined) {
-      const existing = [...(photographer.specialties || [])];
-      if (existing.length > 0) existing[0] = style;
-      else existing.push(style);
-      photographer.specialties = existing;
+      const current = existing.specialties || (base.specialties as string[]) || [];
+      const copy = [...current];
+      if (copy.length > 0) copy[0] = style;
+      else copy.push(style);
+      existing.specialties = copy;
     }
 
-    photographers[index] = photographer;
-    savePhotographers(photographers);
+    existing.updatedAt = new Date().toISOString();
+    await saveOverride(existing);
 
-    return NextResponse.json({ success: true, photographer });
+    // Return merged data
+    const merged = await getPhotographerWithOverrides(slug);
+    return NextResponse.json({ success: true, photographer: merged });
   } catch {
     return NextResponse.json(
       { error: "Internal server error" },

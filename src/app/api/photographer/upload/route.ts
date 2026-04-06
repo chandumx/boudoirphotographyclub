@@ -1,14 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
-import crypto from "crypto";
+import photographersData from "@/data/photographers.json";
+import { uploadImage } from "@/lib/photographer-store";
 
-const DATA_PATH = path.join(process.cwd(), "src/data/photographers.json");
-const UPLOAD_DIR = path.join(process.cwd(), "public/uploads/photographers");
-
-function loadPhotographers() {
-  const raw = fs.readFileSync(DATA_PATH, "utf-8");
-  return JSON.parse(raw);
+interface PhotographerBase {
+  slug: string;
+  editToken?: string;
 }
 
 export async function POST(request: NextRequest) {
@@ -26,12 +22,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const photographers = loadPhotographers();
-    const photographer = photographers.find(
-      (p: { slug: string; editToken: string }) =>
-        p.slug === slug && p.editToken === token
+    const photographer = (photographersData as PhotographerBase[]).find(
+      (p) => p.slug === slug && p.editToken === token
     );
-
     if (!photographer) {
       return NextResponse.json(
         { error: "Invalid token or photographer not found" },
@@ -54,19 +47,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const slugDir = path.join(UPLOAD_DIR, slug);
-    fs.mkdirSync(slugDir, { recursive: true });
-
-    const ext = file.name.split(".").pop() || "jpg";
-    const filename = `${purpose}-${crypto.randomBytes(6).toString("hex")}.${ext}`;
-    const filepath = path.join(slugDir, filename);
-
-    const buffer = Buffer.from(await file.arrayBuffer());
-    fs.writeFileSync(filepath, buffer);
-
-    const publicUrl = `/uploads/photographers/${slug}/${filename}`;
-
-    return NextResponse.json({ success: true, url: publicUrl });
+    const url = await uploadImage(slug, file, purpose);
+    return NextResponse.json({ success: true, url });
   } catch {
     return NextResponse.json(
       { error: "Internal server error" },

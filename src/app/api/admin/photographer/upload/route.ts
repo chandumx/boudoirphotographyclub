@@ -1,9 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
-import crypto from "crypto";
-
-const UPLOAD_DIR = path.join(process.cwd(), "public/uploads/photographers");
+import { uploadImage } from "@/lib/photographer-store";
 
 function isAdmin(request: NextRequest) {
   return request.cookies.get("admin_session")?.value === "authenticated";
@@ -42,19 +38,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const slugDir = path.join(UPLOAD_DIR, slug);
-    fs.mkdirSync(slugDir, { recursive: true });
-
-    const ext = file.name.split(".").pop() || "jpg";
-    const filename = `${purpose}-${crypto.randomBytes(6).toString("hex")}.${ext}`;
-    const filepath = path.join(slugDir, filename);
-
-    const buffer = Buffer.from(await file.arrayBuffer());
-    fs.writeFileSync(filepath, buffer);
-
-    const publicUrl = `/uploads/photographers/${slug}/${filename}`;
-
-    return NextResponse.json({ success: true, url: publicUrl });
+    const url = await uploadImage(slug, file, purpose);
+    return NextResponse.json({ success: true, url });
   } catch {
     return NextResponse.json(
       { error: "Internal server error" },
