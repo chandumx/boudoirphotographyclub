@@ -10,6 +10,7 @@ export interface PhotographerOverride {
   tier?: string;
   imageUrl?: string;
   gallery?: string[];
+  deleted?: boolean;
   updatedAt: string;
 }
 
@@ -91,6 +92,9 @@ export async function getPhotographerWithOverrides(slug: string) {
 
   const override = await getOverride(slug);
   if (!override) return base;
+
+  // If marked as deleted, return null
+  if (override.deleted) return null;
 
   return {
     ...base,

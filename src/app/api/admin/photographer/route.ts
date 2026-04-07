@@ -113,3 +113,41 @@ export async function POST(request: NextRequest) {
     );
   }
 }
+
+export async function DELETE(request: NextRequest) {
+  if (!isAdmin(request)) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  try {
+    const { searchParams } = new URL(request.url);
+    const slug = searchParams.get("slug");
+
+    if (!slug) {
+      return NextResponse.json({ error: "Missing slug" }, { status: 400 });
+    }
+
+    const base = (photographersData as PhotographerBase[]).find(
+      (p) => p.slug === slug
+    );
+    if (!base) {
+      return NextResponse.json(
+        { error: "Photographer not found" },
+        { status: 404 }
+      );
+    }
+
+    // Mark as deleted in Blob override
+    const existing = (await getOverride(slug)) || { slug, updatedAt: "" };
+    (existing as import("@/lib/photographer-store").PhotographerOverride).deleted = true;
+    (existing as import("@/lib/photographer-store").PhotographerOverride).updatedAt = new Date().toISOString();
+    await saveOverride(existing as import("@/lib/photographer-store").PhotographerOverride);
+
+    return NextResponse.json({ success: true });
+  } catch {
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 }
+    );
+  }
+}

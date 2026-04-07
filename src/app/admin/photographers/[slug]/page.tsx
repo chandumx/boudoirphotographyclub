@@ -62,6 +62,7 @@ export default function PhotographerDetailPage({
   const [gallery, setGallery] = useState<string[]>([]);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [deleting, setDeleting] = useState(false);
   const [saveError, setSaveError] = useState("");
   const [uploading, setUploading] = useState<string | null>(null);
   const [editLinkCopied, setEditLinkCopied] = useState(false);
@@ -718,6 +719,40 @@ export default function PhotographerDetailPage({
                 </span>
                 View Public Profile
               </Link>
+              <button
+                onClick={async () => {
+                  if (
+                    !confirm(
+                      `Are you sure you want to delete "${form.name || photographer.name}"? This will remove the listing from the site.`
+                    )
+                  )
+                    return;
+                  setDeleting(true);
+                  try {
+                    const res = await fetch(
+                      `/api/admin/photographer?slug=${encodeURIComponent(slug)}`,
+                      { method: "DELETE" }
+                    );
+                    if (res.ok) {
+                      window.location.href = "/admin/photographers";
+                    } else {
+                      const data = await res.json();
+                      setSaveError(data.error || "Delete failed");
+                      setDeleting(false);
+                    }
+                  } catch {
+                    setSaveError("Network error");
+                    setDeleting(false);
+                  }
+                }}
+                disabled={deleting}
+                className="w-full text-error py-3 px-4 rounded-sm font-label text-xs uppercase tracking-widest hover:bg-red-50 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
+              >
+                <span className="material-symbols-outlined text-sm">
+                  delete
+                </span>
+                {deleting ? "Deleting..." : "Delete Listing"}
+              </button>
             </div>
           </div>
         </div>

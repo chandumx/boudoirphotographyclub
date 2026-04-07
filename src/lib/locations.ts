@@ -213,6 +213,9 @@ export async function getPhotographerBySlug(
     // Blob not available (e.g. build time), use base data
   }
 
+  // If marked as deleted via Blob override, return null
+  if (override?.deleted) return null;
+
   const name = (override?.name as string) || p.name;
   const tier = ((override?.tier as string) || p.tier) as "FEATURED" | "PRO" | "FREE";
 
