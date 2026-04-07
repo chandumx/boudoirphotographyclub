@@ -9,6 +9,7 @@ export interface PhotographerOverride {
   specialties?: string[];
   tier?: string;
   imageUrl?: string;
+  thumbnailUrl?: string;
   gallery?: string[];
   deleted?: boolean;
   updatedAt: string;
@@ -106,6 +107,7 @@ export async function getPhotographerWithOverrides(slug: string) {
     }),
     ...(override.tier !== undefined && { tier: override.tier }),
     ...(override.imageUrl !== undefined && { imageUrl: override.imageUrl }),
+    ...(override.thumbnailUrl !== undefined && { thumbnailUrl: override.thumbnailUrl }),
     ...(override.gallery !== undefined && { gallery: override.gallery }),
   };
 }

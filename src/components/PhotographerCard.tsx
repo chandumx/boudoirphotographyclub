@@ -6,6 +6,7 @@ interface PhotographerCardProps {
   name: string;
   slug: string;
   imageUrl?: string | null;
+  thumbnailUrl?: string | null;
   specialties: string[];
   rating: number;
   reviewCount: number;
@@ -20,6 +21,7 @@ export default function PhotographerCard({
   name,
   slug,
   imageUrl,
+  thumbnailUrl,
   specialties,
   rating,
   reviewCount,
@@ -34,7 +36,7 @@ export default function PhotographerCard({
       {/* Image / Avatar */}
       <div className="w-full md:w-40 h-48 md:h-40 rounded-sm flex-shrink-0 relative overflow-hidden">
         <Image
-          src={imageUrl || getPhotographerImage(specialties, slug)}
+          src={thumbnailUrl || imageUrl || getPhotographerImage(specialties, slug)}
           alt={`${name} - Boudoir Photographer in ${cityName}`}
           fill
           sizes="(max-width: 768px) 100vw, 160px"

@@ -124,6 +124,7 @@ export default async function CityPage({ params }: PageProps) {
                   name={photographer.name}
                   slug={photographer.slug}
                   imageUrl={photographer.imageUrl}
+                  thumbnailUrl={photographer.thumbnailUrl}
                   specialties={photographer.specialties}
                   rating={photographer.rating}
                   reviewCount={photographer.reviewCount}

@@ -14,6 +14,7 @@ interface PhotographerData {
   state: string;
   website?: string;
   imageUrl: string | null;
+  thumbnailUrl?: string | null;
   bio: string;
   specialties: string[];
   rating: number;
@@ -59,6 +60,7 @@ export default function PhotographerDetailPage({
   });
 
   const [headerImage, setHeaderImage] = useState("");
+  const [thumbnailImage, setThumbnailImage] = useState("");
   const [gallery, setGallery] = useState<string[]>([]);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
@@ -68,6 +70,7 @@ export default function PhotographerDetailPage({
   const [editLinkCopied, setEditLinkCopied] = useState(false);
 
   const headerInputRef = useRef<HTMLInputElement>(null);
+  const thumbnailInputRef = useRef<HTMLInputElement>(null);
   const galleryInputRef = useRef<HTMLInputElement>(null);
 
   const loadPhotographer = useCallback(async () => {
@@ -105,6 +108,7 @@ export default function PhotographerDetailPage({
         tier: p.tier || "FREE",
       });
       setHeaderImage(p.imageUrl || "");
+      setThumbnailImage(p.thumbnailUrl || p.imageUrl || "");
       setGallery(p.gallery || []);
     } catch {
       setNotFound(true);
@@ -203,6 +207,16 @@ export default function PhotographerDetailPage({
     e.target.value = "";
   };
 
+  const handleThumbnailUpload = async (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const url = await uploadImage(file, "thumbnail");
+    if (url) setThumbnailImage(url);
+    e.target.value = "";
+  };
+
   const handleGalleryUpload = async (
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -248,6 +262,7 @@ export default function PhotographerDetailPage({
           style: form.style,
           tier: form.tier,
           imageUrl: headerImage,
+          thumbnailUrl: thumbnailImage,
           gallery,
         }),
       });
@@ -358,6 +373,67 @@ export default function PhotographerDetailPage({
                 type="file"
                 accept="image/jpeg,image/png,image/webp,image/avif"
                 onChange={handleHeaderUpload}
+                className="hidden"
+              />
+            </div>
+          </div>
+
+          {/* Thumbnail Image */}
+          <div>
+            <label className={labelClass}>Thumbnail Image</label>
+            <p className="text-[10px] text-on-surface-variant mb-3 -mt-1 opacity-60">
+              Square or portrait image shown on listing cards. If empty, header image is used.
+            </p>
+            <div className="flex items-start gap-4">
+              <div className="relative w-32 h-40 rounded-sm overflow-hidden bg-surface-container-low group flex-shrink-0">
+                {thumbnailImage ? (
+                  <>
+                    <Image
+                      src={thumbnailImage}
+                      alt="Thumbnail preview"
+                      fill
+                      className="object-cover"
+                      sizes="128px"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() => thumbnailInputRef.current?.click()}
+                        className="opacity-0 group-hover:opacity-100 transition-opacity bg-white text-on-surface p-1.5 rounded-full shadow-md hover:bg-gray-50"
+                        title="Replace"
+                      >
+                        <span className="material-symbols-outlined text-sm">edit</span>
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setThumbnailImage("")}
+                        className="opacity-0 group-hover:opacity-100 transition-opacity bg-red-500 text-white p-1.5 rounded-full shadow-md hover:bg-red-600"
+                        title="Remove"
+                      >
+                        <span className="material-symbols-outlined text-sm">close</span>
+                      </button>
+                    </div>
+                  </>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => thumbnailInputRef.current?.click()}
+                    className="w-full h-full flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors"
+                  >
+                    <span className="material-symbols-outlined text-2xl mb-1 opacity-40">
+                      add_photo_alternate
+                    </span>
+                    <span className="font-label text-[8px] uppercase tracking-widest opacity-60">
+                      {uploading === "thumbnail" ? "Uploading..." : "Upload"}
+                    </span>
+                  </button>
+                )}
+              </div>
+              <input
+                ref={thumbnailInputRef}
+                type="file"
+                accept="image/jpeg,image/png,image/webp,image/avif"
+                onChange={handleThumbnailUpload}
                 className="hidden"
               />
             </div>

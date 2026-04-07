@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
 
   try {
     const body = await request.json();
-    const { slug, name, bio, specialties, style, tier, website, imageUrl, gallery } = body;
+    const { slug, name, bio, specialties, style, tier, website, imageUrl, thumbnailUrl, gallery } = body;
 
     if (!slug) {
       return NextResponse.json({ error: "Missing slug" }, { status: 400 });
@@ -72,6 +72,7 @@ export async function POST(request: NextRequest) {
     if (bio !== undefined) existing.bio = bio;
     if (website !== undefined) existing.website = website;
     if (imageUrl !== undefined) existing.imageUrl = imageUrl;
+    if (thumbnailUrl !== undefined) existing.thumbnailUrl = thumbnailUrl;
     if (gallery !== undefined) existing.gallery = gallery;
 
     if (tier !== undefined) {

@@ -101,6 +101,7 @@ export async function getCityBySlug(stateSlug: string, citySlug: string) {
       name: p.name,
       slug: p.slug,
       imageUrl: p.imageUrl,
+      thumbnailUrl: null as string | null,
       specialties: p.specialties,
       rating: p.rating,
       reviewCount: p.reviewCount,
@@ -170,6 +171,7 @@ export interface PhotographerProfile {
   phone: string | null;
   website: string | null;
   imageUrl: string | null;
+  thumbnailUrl?: string | null;
   gallery: string[];
   bio: string | null;
   specialties: string[];
@@ -227,6 +229,7 @@ export async function getPhotographerBySlug(
     phone: null,
     website: (override?.website as string) || p.website,
     imageUrl: (override?.imageUrl as string) || p.imageUrl,
+    thumbnailUrl: (override?.thumbnailUrl as string) || null,
     gallery: (override?.gallery as string[]) || p.gallery || [],
     bio: (override?.bio as string) || p.bio,
     specialties: (override?.specialties as string[]) || p.specialties,
