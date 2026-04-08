@@ -87,17 +87,25 @@ export default async function PhotographerPage({ params }: PageProps) {
   const stateSlug = photographer.state.slug;
   const citySlug = photographer.city.slug;
 
-  const heroImg =
+  // Cap Google Photos URLs to a reasonable resolution to avoid multi-MB downloads
+  const capGoogleImg = (url: string, w = 1600) =>
+    url.replace(/=w\d+-h\d+-k-no$/, `=w${w}-h${Math.round(w * 0.667)}-k-no`);
+
+  const heroImg = capGoogleImg(
     photographer.imageUrl ||
-    getPhotographerImage(photographer.specialties, photographer.slug);
+      getPhotographerImage(photographer.specialties, photographer.slug),
+    1600
+  );
   const hasRealGallery = photographer.gallery.length > 0;
-  const gallery = hasRealGallery
-    ? photographer.gallery
-    : getGalleryForPhotographer(
-        photographer.specialties,
-        photographer.slug,
-        photographer.imageUrl
-      );
+  const gallery = (
+    hasRealGallery
+      ? photographer.gallery
+      : getGalleryForPhotographer(
+          photographer.specialties,
+          photographer.slug,
+          photographer.imageUrl
+        )
+  ).map((img) => capGoogleImg(img, 1200));
 
   return (
     <div className="bg-surface text-on-surface">
