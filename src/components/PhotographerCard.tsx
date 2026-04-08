@@ -42,6 +42,7 @@ export default function PhotographerCard({
           sizes="(max-width: 768px) 100vw, 160px"
           loading="lazy"
           className="object-cover grayscale-[0.2] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+          unoptimized={(thumbnailUrl || imageUrl || "").startsWith("http")}
         />
         {tier === "FEATURED" && (
           <span className="absolute top-2 left-2 bg-primary text-on-primary px-2 py-0.5 font-label text-[8px] uppercase tracking-widest rounded-full">

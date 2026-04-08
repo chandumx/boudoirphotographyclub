@@ -137,6 +137,7 @@ export default async function PhotographerPage({ params }: PageProps) {
               className="object-cover object-center"
               sizes="(max-width: 1440px) 100vw, 1440px"
               priority
+              unoptimized={heroImg.startsWith("http")}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 right-6">
@@ -320,6 +321,7 @@ export default async function PhotographerPage({ params }: PageProps) {
                       className="object-cover object-center transition-transform duration-700 group-hover/img:scale-105"
                       sizes="(max-width: 768px) 50vw, 33vw"
                       loading="lazy"
+                      unoptimized={img.startsWith("http")}
                     />
                   </div>
                 ))}
