@@ -49,13 +49,13 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "JWcKAL0x-StvlImnw2pl9LZ5SOq5NwcLPXRlXCJxygI",
+    other: {
+      "google-adsense-account": ["ca-pub-1127990265261879"],
+    },
   },
   robots: {
     index: true,
     follow: true,
-  },
-  other: {
-    "google-adsense-account": "ca-pub-1127990265261879",
   },
 };
 
