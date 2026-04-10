@@ -105,6 +105,7 @@ export default function Footer() {
           <Link href="/contact" className="font-body text-xs tracking-wider uppercase text-[#faf9f6] opacity-40 hover:opacity-100 duration-300">Contact</Link>
           <Link href="/privacy" className="font-body text-xs tracking-wider uppercase text-[#faf9f6] opacity-40 hover:opacity-100 duration-300">Privacy</Link>
           <Link href="/terms" className="font-body text-xs tracking-wider uppercase text-[#faf9f6] opacity-40 hover:opacity-100 duration-300">Terms</Link>
+          <Link href="/disclaimer" className="font-body text-xs tracking-wider uppercase text-[#faf9f6] opacity-40 hover:opacity-100 duration-300">Disclaimer</Link>
         </div>
       </div>
     </footer>

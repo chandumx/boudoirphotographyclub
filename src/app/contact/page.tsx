@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact Us | Boudoir Photography Club",
@@ -41,20 +42,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="bg-surface-container-lowest rounded-sm p-8 mt-8">
-            <h2 className="font-headline text-xl text-on-surface mb-4">Send Us a Message</h2>
-            <form className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
-                <input type="text" placeholder="Your Name" className="w-full bg-surface border border-outline-variant rounded-sm px-4 py-3 text-sm focus:ring-1 focus:ring-primary focus:outline-none" />
-                <input type="email" placeholder="Your Email" className="w-full bg-surface border border-outline-variant rounded-sm px-4 py-3 text-sm focus:ring-1 focus:ring-primary focus:outline-none" />
-              </div>
-              <input type="text" placeholder="Subject" className="w-full bg-surface border border-outline-variant rounded-sm px-4 py-3 text-sm focus:ring-1 focus:ring-primary focus:outline-none" />
-              <textarea placeholder="Your Message" rows={5} className="w-full bg-surface border border-outline-variant rounded-sm px-4 py-3 text-sm focus:ring-1 focus:ring-primary focus:outline-none resize-none" />
-              <button type="submit" className="editorial-gradient text-on-primary py-3 px-8 font-label text-xs uppercase tracking-widest hover:opacity-90 transition-opacity">
-                Send Message
-              </button>
-            </form>
-          </div>
+          <ContactForm />
         </div>
       </div>
     </div>

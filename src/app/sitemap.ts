@@ -72,6 +72,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.2,
     },
     {
+      url: `${BASE_URL}/disclaimer`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "yearly",
+      priority: 0.2,
+    },
+    {
       url: `${BASE_URL}/boudoir-vs-glamour-photography`,
       lastModified: LAST_UPDATED,
       changeFrequency: "monthly",
