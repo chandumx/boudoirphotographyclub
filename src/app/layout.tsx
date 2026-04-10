@@ -54,6 +54,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  other: {
+    "google-adsense-account": "ca-pub-1127990265261879",
+  },
 };
 
 export default function RootLayout({
@@ -64,7 +67,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="light">
       <head>
-        <meta name="google-adsense-account" content="ca-pub-1127990265261879" />
         <script dangerouslySetInnerHTML={{ __html: `
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
