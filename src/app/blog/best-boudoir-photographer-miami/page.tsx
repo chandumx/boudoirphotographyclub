@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Best Boudoir Photographers in Miami FL (2026 Guide)",
+  title: "Best Boudoir Photographers in Miami, FL — 2026 Picks & Prices",
   description:
-    "Discover the best boudoir photographers in Miami for 2026. Pricing from $500-$3,000+, top studio areas from South Beach to Wynwood, and tips for booking your Miami boudoir experience.",
+    "Miami's top boudoir studios compared: pricing ($400–$3,000+), South Beach vs Wynwood vs Brickell, what to expect, and how to book. Find your perfect Miami boudoir photographer today.",
   keywords: [
     "boudoir photographer miami",
     "boudoir photography miami",

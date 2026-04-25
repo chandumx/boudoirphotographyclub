@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "40 Boudoir Outfit Ideas: What to Wear for Every Style & Budget (2026)",
+  title: "40 Boudoir Outfit Ideas (2026) — What to Wear for Every Body & Style",
   description:
-    "Browse 40 boudoir outfit ideas organized by style: lingerie sets, bodysuits, robes, corsets, swimwear, casual looks, and accessories. Plus size brands, budget-friendly options, and colors that photograph beautifully.",
+    "40 boudoir outfit ideas that actually photograph well: lingerie, bodysuits, robes, corsets & casual looks. Plus-size options, colors to avoid, and where to shop under $50.",
   keywords: [
     "boudoir outfit ideas",
     "boudoir outfits",

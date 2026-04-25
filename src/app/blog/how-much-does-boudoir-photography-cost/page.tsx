@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "How Much Does Boudoir Photography Cost? 2026 Pricing Guide",
+  title: "How Much Does Boudoir Photography Cost in 2026? (Real Prices by City)",
   description:
-    "Boudoir photography costs $300 to $2,500+ depending on location, photographer experience, and package. See pricing by city, what's included, hidden costs, and tips to save money.",
+    "Boudoir photography real cost breakdown: $300–$5,000+ by city, what's included vs hidden fees, package comparisons, and 7 ways to save money without sacrificing quality.",
   keywords: [
     "how much does boudoir photography cost",
     "boudoir photography pricing",

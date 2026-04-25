@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Best Boudoir Photographers in Minneapolis Minnesota (2026 Guide)",
+  title: "Best Boudoir Photographers in Minneapolis, MN — 2026 Picks & Prices",
   description:
-    "Find the best boudoir photographers in Minneapolis, MN. Our 2026 guide covers pricing, neighborhoods from North Loop to Uptown, winter session tips, and FAQs.",
+    "Minneapolis's top boudoir studios compared: pricing ($350–$2,500+), North Loop vs Uptown vs NE studios, Twin Cities winter session tips, and exactly how to book.",
   keywords: [
     "boudoir photographer minneapolis",
     "minneapolis boudoir photography",

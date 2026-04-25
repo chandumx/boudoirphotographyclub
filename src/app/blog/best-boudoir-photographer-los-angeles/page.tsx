@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Best Boudoir Photographers in Los Angeles CA (2026 Guide)",
+  title: "Best Boudoir Photographers in Los Angeles, CA — 2026 Picks & Prices",
   description:
-    "Find the best boudoir photographers in Los Angeles for 2026. Pricing from $600-$3,500+, top studio areas from Hollywood to Santa Monica, and tips for your LA boudoir session.",
+    "LA's top boudoir studios ranked: Hollywood, West Hollywood & Santa Monica. Pricing $500–$3,500+, styles compared, red flags to avoid, and how to book the right photographer.",
   keywords: [
     "boudoir photographer los angeles",
     "boudoir photography la",

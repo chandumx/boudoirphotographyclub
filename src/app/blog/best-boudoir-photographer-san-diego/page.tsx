@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Best Boudoir Photographers in San Diego California (2026 Guide)",
+  title: "Best Boudoir Photographers in San Diego, CA — 2026 Picks & Prices",
   description:
-    "Discover the best boudoir photographers in San Diego, CA. Our 2026 guide covers pricing, beach and downtown locations, Southern California style, booking tips, and FAQs.",
+    "San Diego's top boudoir studios: beach vs downtown vs inland — pricing $400–$3,000+, SoCal styles, what to expect, red flags, and how to find the right photographer for you.",
   keywords: [
     "boudoir photographer san diego",
     "san diego boudoir photography",
