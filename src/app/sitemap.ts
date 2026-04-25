@@ -2,9 +2,10 @@ import { MetadataRoute } from "next";
 import statesData from "@/data/states.json";
 import citiesData from "@/data/cities.json";
 import photographersData from "@/data/photographers.json";
+import blogData from "@/data/blog.json";
 
 const BASE_URL = "https://boudoirphotographyclub.com";
-const LAST_UPDATED = new Date("2026-04-04");
+const LAST_UPDATED = new Date("2026-04-25");
 
 interface CityEntry {
   name: string;
@@ -209,6 +210,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    {
+      url: `${BASE_URL}/fine-art-boudoir`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/couples-boudoir`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/boudoir-vs-glamour-photography`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
   ];
 
   const statePages: MetadataRoute.Sitemap = statesData.map((state) => ({
@@ -237,134 +256,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  const blogPages2: MetadataRoute.Sitemap = [
-    {
-      url: `${BASE_URL}/blog/best-boudoir-cameras-guide`,
-      lastModified: LAST_UPDATED,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/best-boudoir-photographer-boston`,
-      lastModified: LAST_UPDATED,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/best-boudoir-photographer-columbus`,
-      lastModified: LAST_UPDATED,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/best-boudoir-photographer-detroit`,
-      lastModified: LAST_UPDATED,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/best-boudoir-photographer-las-vegas`,
-      lastModified: LAST_UPDATED,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/best-boudoir-photographer-minneapolis`,
-      lastModified: LAST_UPDATED,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/best-boudoir-photographer-philadelphia`,
-      lastModified: LAST_UPDATED,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/best-boudoir-photographer-phoenix`,
-      lastModified: LAST_UPDATED,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/best-boudoir-photographer-portland`,
-      lastModified: LAST_UPDATED,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/best-boudoir-photographer-san-diego`,
-      lastModified: LAST_UPDATED,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/best-boudoir-photographer-san-francisco`,
-      lastModified: LAST_UPDATED,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/best-boudoir-photographer-seattle`,
-      lastModified: LAST_UPDATED,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/birthday-boudoir-photoshoot`,
-      lastModified: LAST_UPDATED,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/boudoir-album-design-ideas`,
-      lastModified: LAST_UPDATED,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/boudoir-confidence-guide`,
-      lastModified: LAST_UPDATED,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/boudoir-lighting-guide`,
-      lastModified: LAST_UPDATED,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/boudoir-vs-portrait-photography`,
-      lastModified: LAST_UPDATED,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/holiday-boudoir-gift-guide`,
-      lastModified: LAST_UPDATED,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/how-to-start-boudoir-business`,
-      lastModified: LAST_UPDATED,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/summer-boudoir-ideas`,
-      lastModified: LAST_UPDATED,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/blog/valentines-day-boudoir`,
-      lastModified: LAST_UPDATED,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-  ];
+  const blogPages2: MetadataRoute.Sitemap = blogData.map((post) => ({
+    url: `${BASE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.createdAt),
+    changeFrequency: "monthly" as const,
+    priority: post.category === "City Guide" ? 0.8 : 0.7,
+  }));
 
   const styleKeys = ["romantic", "luxury", "bridal", "dark-moody", "fine-art", "glamour", "couples-boudoir", "plus-size", "maternity-boudoir", "women-owned"];
   const topCitiesForStyles = (citiesData as CityEntry[])
