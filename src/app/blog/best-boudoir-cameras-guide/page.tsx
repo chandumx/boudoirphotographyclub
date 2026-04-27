@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Best Cameras for Boudoir Photography in 2026: Top 10 Picks",
+  title: "Best Cameras for Boudoir Photography 2026: Top 10 Ranked by Pros",
   description:
-    "Discover the best cameras for boudoir photography in 2026, including top mirrorless and DSLR picks, lens recommendations, lighting gear, and budget-friendly options for every skill level.",
+    "Our 2026 ranked list of the best cameras for boudoir photography — top mirrorless & DSLR picks, must-have lenses, lighting gear, and budget options. Updated for 2026 sensors and autofocus systems.",
   keywords: [
     "best camera for boudoir photography",
     "boudoir photography camera",

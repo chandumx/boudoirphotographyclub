@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { notFound, permanentRedirect } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
-import { getPhotographerBySlug, getPhotographerSlugs } from "@/lib/locations";
+import {
+  findPhotographerSlugFallback,
+  getPhotographerBySlug,
+  getPhotographerSlugs,
+} from "@/lib/locations";
 import { generateLocalBusinessSchema } from "@/lib/seo";
 import LeadCaptureWidget from "@/components/LeadCaptureWidget";
 import {
@@ -53,6 +58,28 @@ export async function generateStaticParams() {
   return photographers.map((p) => ({ slug: p.slug }));
 }
 
+function isPlaceholderBio(bio: string | null | undefined): boolean {
+  if (!bio) return true;
+  const lower = bio.toLowerCase();
+  return (
+    lower.startsWith("professional boudoir photographer") ||
+    lower === "photographer." ||
+    lower === "photography studio." ||
+    bio.trim().length < 80
+  );
+}
+
+function buildRichBio(photographer: NonNullable<Awaited<ReturnType<typeof getPhotographerBySlug>>>): string {
+  const name = photographer.name;
+  const city = photographer.city.name;
+  const state = photographer.state.name;
+  const specialties = photographer.specialties.length > 0 ? photographer.specialties.join(" and ") : "boudoir";
+  const rating = photographer.rating > 0 ? ` With a ${photographer.rating.toFixed(1)}-star rating from ${photographer.reviewCount} clients, they` : " They";
+  const tier = photographer.tier === "FEATURED" ? "premium" : photographer.tier === "PRO" ? "professional" : "dedicated";
+
+  return `${name} is a ${tier} boudoir photographer based in ${city}, ${state}, specializing in ${specialties} photography. Working from their ${city} studio, they create a safe, empowering experience for every client — from first-timers to seasoned portrait subjects.${rating} are known for their personalized approach to styling, posing guidance, and creating images clients treasure for a lifetime. Located in ${city}, ${state}, ${name} welcomes clients from across the region for intimate, confidence-building boudoir sessions.`;
+}
+
 export default async function PhotographerPage({ params }: PageProps) {
   const { slug } = await params;
   let photographer: Awaited<ReturnType<typeof getPhotographerBySlug>> = null;
@@ -62,24 +89,13 @@ export default async function PhotographerPage({ params }: PageProps) {
   } catch {}
 
   if (!photographer) {
-    return (
-      <div className="bg-surface text-on-surface">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 py-24 text-center">
-          <h1 className="font-headline text-5xl italic text-on-surface mb-4">
-            Photographer Not Found
-          </h1>
-          <p className="text-on-surface-variant mb-8">
-            This photographer profile doesn&apos;t exist or has been removed.
-          </p>
-          <Link
-            href="/boudoir-photographers"
-            className="font-label text-xs uppercase tracking-widest text-primary hover:opacity-80 transition-opacity"
-          >
-            Browse All Photographers
-          </Link>
-        </div>
-      </div>
-    );
+    const fallback = await findPhotographerSlugFallback(slug);
+    if (fallback) permanentRedirect(`/photographer/${fallback}`);
+    notFound();
+  }
+
+  if (isPlaceholderBio(photographer.bio)) {
+    photographer = { ...photographer, bio: buildRichBio(photographer) };
   }
 
   const cityName = photographer.city.name;
@@ -398,7 +414,7 @@ export default async function PhotographerPage({ params }: PageProps) {
                 Update your name, description, style, budget, and images anytime using your private edit link.
               </p>
               <a
-                href="mailto:hello@boudoirphotographyclub.com?subject=Edit%20Link%20Request%20-%20{photographer.name}&body=Hi%2C%20I%27d%20like%20to%20edit%20my%20listing.%20My%20profile%20URL%20is%3A%20https%3A%2F%2Fboudoirphotographyclub.com%2Fphotographer%2F{slug}"
+                href={`mailto:hello@boudoirphotographyclub.com?subject=Edit%20Link%20Request%20-%20${encodeURIComponent(photographer.name)}&body=Hi%2C%20I%27d%20like%20to%20edit%20my%20listing.%20My%20profile%20URL%20is%3A%20https%3A%2F%2Fboudoirphotographyclub.com%2Fphotographer%2F${slug}`}
                 className="inline-flex items-center gap-2 font-label text-xs uppercase tracking-widest text-primary hover:opacity-70 transition-opacity"
               >
                 <span className="material-symbols-outlined text-sm">mail</span>

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "What Is Boudoir Photography? The Complete Guide (2026)",
+  title: "What Is Boudoir Photography? 2026 Guide — 7 Styles, Costs & What to Expect",
   description:
-    "Discover what boudoir photography is, its history, the different styles (classic, editorial, dark moody, fine art, couples, bridal, maternity), what to expect, costs, and how to prepare for your session.",
+    "Boudoir photography is intimate, empowering portraiture. This 2026 guide covers 7 styles, real costs ($500–$3,500+), what to wear, and exactly what to expect — with tips from working photographers.",
   keywords: [
     "what is boudoir photography",
     "boudoir photography definition",
