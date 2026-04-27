@@ -84,55 +84,88 @@ export default function BestBoudoirCamerasGuidePage() {
         <section id="top-cameras" className="mb-12">
           <h2 className="font-headline text-3xl mb-6">Top 10 Cameras for Boudoir Photography in 2026</h2>
 
+          {/* AMAZON AFFILIATE NOTE: Replace YOUR-AMAZON-TAG below with your Associates tag
+              Sign up free at affiliate-program.amazon.com — ~4% commission on cameras */}
+
           <h3 className="font-headline text-2xl mb-4">1. Sony A7 IV</h3>
-          <p className="font-body text-lg leading-relaxed mb-6">
+          <p className="font-body text-lg leading-relaxed mb-3">
             The Sony A7 IV remains the workhorse of the boudoir photography world. Its 33-megapixel full-frame sensor delivers exceptional low-light performance with usable images up to ISO 12800. The real-time eye-tracking autofocus is remarkably accurate even in dim, moody lighting, and the 10fps burst rate captures fleeting expressions. Sony&rsquo;s color science has matured significantly, and the A7 IV produces warm, natural skin tones that require minimal post-processing. At around $2,500 body-only, it represents outstanding value for professional boudoir work.
           </p>
+          <a href="https://www.amazon.com/s?k=Sony+A7+IV+camera&tag=YOUR-AMAZON-TAG" target="_blank" rel="noopener noreferrer sponsored" className="inline-flex items-center gap-2 text-sm font-medium text-amber-700 bg-amber-50 border border-amber-200 px-4 py-2 rounded-full hover:bg-amber-100 transition-colors mb-6">
+            <span>🛒</span> Check current price on Amazon
+          </a>
 
           <h3 className="font-headline text-2xl mb-4">2. Canon EOS R6 Mark III</h3>
-          <p className="font-body text-lg leading-relaxed mb-6">
+          <p className="font-body text-lg leading-relaxed mb-3">
             Canon has long been the favorite of portrait and boudoir photographers for its beautiful, warm color rendering. The R6 Mark III builds on that legacy with a 24.2-megapixel full-frame sensor optimized for high ISO performance. Its Dual Pixel CMOS AF II system tracks eyes with uncanny precision in near darkness, and the in-body image stabilization allows you to shoot handheld at dramatically slow shutter speeds for natural-light work. The color output is gorgeous straight from the camera, meaning less time in Lightroom and more time shooting.
           </p>
+          <a href="https://www.amazon.com/s?k=Canon+EOS+R6+Mark+III&tag=YOUR-AMAZON-TAG" target="_blank" rel="noopener noreferrer sponsored" className="inline-flex items-center gap-2 text-sm font-medium text-amber-700 bg-amber-50 border border-amber-200 px-4 py-2 rounded-full hover:bg-amber-100 transition-colors mb-6">
+            <span>🛒</span> Check current price on Amazon
+          </a>
 
           <h3 className="font-headline text-2xl mb-4">3. Nikon Z6 III</h3>
-          <p className="font-body text-lg leading-relaxed mb-6">
+          <p className="font-body text-lg leading-relaxed mb-3">
             Nikon&rsquo;s Z6 III is a full-frame mirrorless powerhouse that excels in the controlled lighting environments common to boudoir work. The 24.5-megapixel sensor produces clean files at high ISOs with excellent dynamic range. Nikon&rsquo;s 3D tracking autofocus is tenacious once locked onto a subject&rsquo;s eyes, and the deep Z-mount allows for sharper, faster lenses than ever before. The electronic viewfinder is among the best in the industry, providing an accurate preview of your exposure in real time &mdash; invaluable when working with dramatic lighting.
           </p>
+          <a href="https://www.amazon.com/s?k=Nikon+Z6+III+camera&tag=YOUR-AMAZON-TAG" target="_blank" rel="noopener noreferrer sponsored" className="inline-flex items-center gap-2 text-sm font-medium text-amber-700 bg-amber-50 border border-amber-200 px-4 py-2 rounded-full hover:bg-amber-100 transition-colors mb-6">
+            <span>🛒</span> Check current price on Amazon
+          </a>
 
           <h3 className="font-headline text-2xl mb-4">4. Sony A7R V</h3>
-          <p className="font-body text-lg leading-relaxed mb-6">
+          <p className="font-body text-lg leading-relaxed mb-3">
             For boudoir photographers who want maximum resolution for large prints and albums, the A7R V&rsquo;s 61-megapixel sensor is unmatched. The AI-based autofocus system uses a dedicated processing unit to track subjects with extraordinary accuracy. While the high resolution means file sizes are large and storage needs are greater, the detail captured in skin texture, fabric, and fine elements like lace and jewelry is breathtaking. This is the camera for photographers whose clients invest in oversized wall art and luxury album products.
           </p>
+          <a href="https://www.amazon.com/s?k=Sony+A7R+V+camera&tag=YOUR-AMAZON-TAG" target="_blank" rel="noopener noreferrer sponsored" className="inline-flex items-center gap-2 text-sm font-medium text-amber-700 bg-amber-50 border border-amber-200 px-4 py-2 rounded-full hover:bg-amber-100 transition-colors mb-6">
+            <span>🛒</span> Check current price on Amazon
+          </a>
 
           <h3 className="font-headline text-2xl mb-4">5. Canon EOS R5 Mark II</h3>
-          <p className="font-body text-lg leading-relaxed mb-6">
+          <p className="font-body text-lg leading-relaxed mb-3">
             The R5 Mark II pairs Canon&rsquo;s legendary color science with a 45-megapixel sensor that balances resolution and low-light performance beautifully. Its autofocus system is arguably the best Canon has ever produced, with eye detection that works reliably in near darkness. The camera also offers focus bracketing, which some boudoir photographers use creatively for tack-sharp images at ultra-wide apertures. At around $4,300 body-only, it is a premium investment that pays dividends in image quality.
           </p>
+          <a href="https://www.amazon.com/s?k=Canon+EOS+R5+Mark+II&tag=YOUR-AMAZON-TAG" target="_blank" rel="noopener noreferrer sponsored" className="inline-flex items-center gap-2 text-sm font-medium text-amber-700 bg-amber-50 border border-amber-200 px-4 py-2 rounded-full hover:bg-amber-100 transition-colors mb-6">
+            <span>🛒</span> Check current price on Amazon
+          </a>
 
           <h3 className="font-headline text-2xl mb-4">6. Fujifilm X-T5</h3>
-          <p className="font-body text-lg leading-relaxed mb-6">
+          <p className="font-body text-lg leading-relaxed mb-3">
             Not every boudoir photographer needs full frame. Fujifilm&rsquo;s X-T5 packs a 40-megapixel APS-C sensor into a compact, beautifully designed body. Fujifilm&rsquo;s film simulations &mdash; particularly Classic Neg and Nostalgic Neg &mdash; produce gorgeous, film-like skin tones that many boudoir photographers love for their vintage quality. The smaller sensor means slightly less low-light headroom than full frame, but in controlled studio lighting, the X-T5 delivers images that rival much more expensive cameras. It is also significantly lighter, reducing fatigue during long sessions.
           </p>
+          <a href="https://www.amazon.com/s?k=Fujifilm+X-T5&tag=YOUR-AMAZON-TAG" target="_blank" rel="noopener noreferrer sponsored" className="inline-flex items-center gap-2 text-sm font-medium text-amber-700 bg-amber-50 border border-amber-200 px-4 py-2 rounded-full hover:bg-amber-100 transition-colors mb-6">
+            <span>🛒</span> Check current price on Amazon
+          </a>
 
           <h3 className="font-headline text-2xl mb-4">7. Nikon Z8</h3>
-          <p className="font-body text-lg leading-relaxed mb-6">
+          <p className="font-body text-lg leading-relaxed mb-3">
             The Nikon Z8 essentially puts Z9 flagship technology into a more compact body. Its stacked 45.7-megapixel sensor offers blistering autofocus speed, zero blackout in the viewfinder, and the kind of dynamic range that lets you rescue dramatically underexposed shadows without penalty. For boudoir photographers who also shoot weddings and events, the Z8 is a versatile do-everything camera that excels in the intimate setting while handling fast-paced environments equally well.
           </p>
+          <a href="https://www.amazon.com/s?k=Nikon+Z8+camera&tag=YOUR-AMAZON-TAG" target="_blank" rel="noopener noreferrer sponsored" className="inline-flex items-center gap-2 text-sm font-medium text-amber-700 bg-amber-50 border border-amber-200 px-4 py-2 rounded-full hover:bg-amber-100 transition-colors mb-6">
+            <span>🛒</span> Check current price on Amazon
+          </a>
 
           <h3 className="font-headline text-2xl mb-4">8. Sony A7C II</h3>
-          <p className="font-body text-lg leading-relaxed mb-6">
+          <p className="font-body text-lg leading-relaxed mb-3">
             The A7C II brings full-frame boudoir capability into the most compact body in this list. Its 33-megapixel sensor is essentially the same as the A7 IV, delivering the same excellent image quality in a body that is significantly smaller and lighter. For boudoir photographers who travel to client locations or work in tight hotel room spaces, the compact size is a genuine advantage. The flip-out screen is also useful for shooting from low angles &mdash; a common boudoir perspective.
           </p>
+          <a href="https://www.amazon.com/s?k=Sony+A7C+II+camera&tag=YOUR-AMAZON-TAG" target="_blank" rel="noopener noreferrer sponsored" className="inline-flex items-center gap-2 text-sm font-medium text-amber-700 bg-amber-50 border border-amber-200 px-4 py-2 rounded-full hover:bg-amber-100 transition-colors mb-6">
+            <span>🛒</span> Check current price on Amazon
+          </a>
 
           <h3 className="font-headline text-2xl mb-4">9. Canon EOS R8</h3>
-          <p className="font-body text-lg leading-relaxed mb-6">
+          <p className="font-body text-lg leading-relaxed mb-3">
             The EOS R8 is Canon&rsquo;s most affordable full-frame mirrorless camera, and it punches well above its price point for boudoir work. It shares the same autofocus system as the R6 series, meaning you get Canon&rsquo;s excellent eye detection at a significantly lower price. The 24.2-megapixel sensor produces beautiful files with Canon&rsquo;s trademark warm tones. The main trade-off is the lack of in-body stabilization, but for studio and controlled-environment work where you are often on a tripod or shooting at fast shutter speeds with strobes, this is a minor concession.
           </p>
+          <a href="https://www.amazon.com/s?k=Canon+EOS+R8+camera&tag=YOUR-AMAZON-TAG" target="_blank" rel="noopener noreferrer sponsored" className="inline-flex items-center gap-2 text-sm font-medium text-amber-700 bg-amber-50 border border-amber-200 px-4 py-2 rounded-full hover:bg-amber-100 transition-colors mb-6">
+            <span>🛒</span> Check current price on Amazon
+          </a>
 
           <h3 className="font-headline text-2xl mb-4">10. Fujifilm GFX 100S II</h3>
-          <p className="font-body text-lg leading-relaxed mb-6">
+          <p className="font-body text-lg leading-relaxed mb-3">
             For the ultimate in image quality, medium format cannot be beaten. The GFX 100S II&rsquo;s 102-megapixel sensor captures an almost three-dimensional quality of depth and detail that full-frame sensors cannot replicate. Skin textures, fabric weaves, and the subtle gradations of light across the body are rendered with gallery-level precision. The shallow depth of field achievable with medium format is also uniquely beautiful for boudoir work. At around $5,000 body-only, it is the luxury choice for photographers catering to a high-end boudoir clientele.
           </p>
+          <a href="https://www.amazon.com/s?k=Fujifilm+GFX+100S+II&tag=YOUR-AMAZON-TAG" target="_blank" rel="noopener noreferrer sponsored" className="inline-flex items-center gap-2 text-sm font-medium text-amber-700 bg-amber-50 border border-amber-200 px-4 py-2 rounded-full hover:bg-amber-100 transition-colors mb-6">
+            <span>🛒</span> Check current price on Amazon
+          </a>
         </section>
 
         {/* Lenses */}

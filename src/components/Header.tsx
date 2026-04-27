@@ -21,13 +21,19 @@ export default function Header() {
             >
               Blog
             </Link>
+            <Link
+              href="/advertise"
+              className="font-headline uppercase tracking-widest text-xs text-on-surface opacity-70 hover:opacity-100 transition-opacity duration-300"
+            >
+              Advertise
+            </Link>
           </div>
         </div>
         <Link
-          href="/submit"
+          href="/advertise"
           className="editorial-gradient text-on-primary px-5 py-2.5 rounded-sm font-label text-xs uppercase tracking-wider hover:opacity-90 transition-opacity"
         >
-          List Your Studio — Free
+          Get Featured
         </Link>
       </div>
     </nav>

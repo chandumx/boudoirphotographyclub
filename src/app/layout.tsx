@@ -78,6 +78,8 @@ export default function RootLayout({
             wait_for_update: 500
           });
         `}} />
+        {/* AdSense Auto Ads — account already verified */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1127990265261879" crossOrigin="anonymous" />
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
         <script dangerouslySetInnerHTML={{ __html: `
           window.dataLayer = window.dataLayer || [];
